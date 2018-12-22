@@ -1,0 +1,270 @@
+/* 8 YARD LABS */
+/* Codename: Sjokolator/Chocolator */
+/* 2018 8yd.no */
+/* v 0.9 */
+
+@import 'https://fonts.googleapis.com/css?family=Work+Sans:400,500';
+@import "reset";
+@import "typography";
+@import "mixin";
+
+
+html, input {
+   font-family: 'Work Sans', sans-serif;
+   letter-spacing: -0.02em;
+}
+
+body {
+   background-color: #51415a;
+   color: #fff;
+   width: 100%;
+}
+
+/* TOPP/INN */
+
+.hode, .inn {
+   margin:0 auto;
+   width: 100%;
+   max-width: 1320px;
+}
+
+.hode {
+   padding: 0 1rem 1rem;
+   margin-bottom: 2em;
+
+   p {
+      font-size: 1.5em;
+      color: #ffcb0f;
+      line-height: 1.35em;
+   }
+}
+
+.sprog {
+   margin: 0.5rem 0 2.5rem 0;
+   color: #ffffff;
+   font-size: 0.9em;
+}
+
+a {color: #c598f5;}
+a:hover {color: #d4c3d8;}
+
+.logo {
+   width: 50%;
+   max-width: 200px;
+   margin-bottom: 1em;
+}
+
+.inn {
+   padding: 1rem;
+}
+
+.surface {
+   width: 100%;
+   max-width: 1320px;
+   margin-left: auto;
+   margin-right: auto;
+   border-radius: 12px 12px 0 0;
+   background-color: #f6f6f6;
+   box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+   padding-bottom: 2rem;
+}
+
+
+
+/* SKJEMA */
+
+.sjokoinfo {
+   display:flex;
+   flex-flow: row wrap;
+   justify-content:center;
+   align-content: center;
+   justify-content: space-between;
+   align-items: flex-end;
+
+   p {
+      flex-grow: 0;
+      flex-shrink: 1;
+      flex-basis: 24%;
+      width: 24%;
+   }
+}
+
+input, label {
+   display:block;
+}
+
+.sjokoinfo input { 
+   background-color: #483452;
+   color: #f6f6f6;
+   width: 92%; 
+   padding: 3px 6px 4px;
+   border: 0;
+   border-bottom: 1px solid #d4c3d8;
+   border-radius: 3px 3px 0 0;
+   outline: none;
+   height: 2rem;
+   font-size: 1em;
+   margin-bottom: 20px;
+   box-shadow: none;
+   box-sizing: content-box;
+}
+
+.sjokoinfo input:focus {
+   padding: 3px 6px 3px;
+   border-bottom: 2px solid #f6f6f6;
+   transition: all .5s;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+   color: #d4c3d8;
+   opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color: #d4c3d8;
+}
+
+::-ms-input-placeholder { /*Edge*/
+   color: #d4c3d8;
+}
+
+label {
+   font-size: 0.9em;
+   font-weight: 500;
+   margin-bottom: 0.3rem;
+}
+
+
+/* RESULTAT */
+.ut {
+   width: 100%;
+   min-height: 100px;
+   display:flex;
+   flex-flow: column nowrap;
+   justify-content:center;
+   align-content: center;
+   align-items: center;
+   padding: 1rem;
+}
+
+#betar {
+   font-size: 1.8em;
+   line-height: 2.1em;
+   color: #4d3852;
+   font-weight: 400;
+   padding-bottom: 1rem;
+   margin-bottom: 2rem;
+   width: 100%;
+   border-bottom: 1px solid #d4c3d8;
+}
+
+#resfigur {
+   display:flex;
+   flex-flow: row wrap;
+   justify-content: center;
+   align-content: stretch;
+   align-items: stretch;
+   width: 100%;
+}
+
+.reschild {
+   flex-grow: 1;
+   flex-shrink: 1;
+   flex-basis: 33%;
+   width: 33%;
+   display:flex;
+   justify-content:center;
+   align-content: center;
+   align-items: center;
+   padding: 12px;
+}
+
+#resplate {
+   flex-flow: row wrap;
+}
+
+#resrad {
+   flex-flow: column nowrap;
+   border-left: 1px solid #d4c3d8;
+}
+
+#resrute {
+   flex-flow: row wrap;
+   border-left: 1px solid #d4c3d8;
+}
+
+.sjokoplate {
+   display:flex;
+   flex-flow: column nowrap;
+   justify-content: center;
+   align-content: stretch;
+   align-items: center;
+   flex-grow: 0;
+   flex-shrink: 1;
+   flex-basis: auto;
+   margin: 4px;
+   background-color: #7c3a2d;
+   padding: 2px;
+   border-radius: 3px;
+}
+
+.sjokorad {
+   display:flex;
+   flex-flow: row wrap;
+   justify-content: center;
+   align-content: stretch;
+   align-items: center;
+   flex-grow: 0;
+   flex-shrink: 1;
+   flex-basis: auto;
+}
+
+#resrad > .sjokorad {
+   margin: 3px;
+}
+
+.sjokorute {
+   flex-grow: 0;
+   flex-shrink: 1;
+   flex-basis: auto;
+   width: 24px;
+   height: 34px;
+   /*min-width: 6.25%;
+   /*width: 20%;*/
+   background: #4b1f09 url("//8yd.no/assets/yard/labs/sjokolator/chock.png") no-repeat 0 0;
+   background-size: cover;
+   margin: 1px 0;
+   box-sizing: content-box; /* gjør at border og padding havner på innsida */
+}
+
+#resrute > .sjokorute {
+   margin: 3px;
+}
+
+
+/* ROADMAP */
+
+.roadmap {
+   margin: 2rem auto 0 auto;
+   width: 100%;
+   padding: 1rem;
+   max-width: 1320px;
+}
+
+/* FOT */
+
+footer {
+   background: #fff;
+   margin-top: 2rem;
+   padding: 20px;
+   font-size: 0.7em;
+   line-height: 1.2em;
+
+   img {
+      width: 30px;
+   }
+
+}
+
+
+@import "smaller";

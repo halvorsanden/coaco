@@ -1,0 +1,114 @@
+/* SMALLER THAN DESKTOP */
+
+/************* Små skjermer under 1024 *************/
+
+@media only screen and (max-width: 1024px) {
+
+   .hode, .inn {
+      padding:0 5% 2rem 5%;
+   }
+
+   .surface {
+      padding: 0;
+   }
+
+   .ut {
+      box-sizing: border-box;
+      display:flex;
+      flex-flow: column nowrap;
+      justify-content:center;
+      align-content: center;
+      align-items: center;
+      padding: 1.5rem;
+   }
+
+   .roadmap, footer {
+      padding: 20px 5%;
+   }
+
+}
+
+
+
+/************* Nettbrett og dess like *************/
+
+@media only screen and (max-width: 768px) {
+
+   h1 {
+      font-size: 2.5em;
+   }
+
+   .hode {
+       margin-bottom: 1.2em;
+      p {
+         font-size: 1.1em;
+      }
+   }
+
+   .sjokoinfo {
+
+      p {
+         flex-basis: 48%;
+         width: 48%;
+      }
+   }
+
+   .surface {
+      padding: 0;
+   }
+
+   #betar {
+      font-size: 1.4em;
+      line-height: 1.9em;
+   }
+
+   #resfigur {
+
+      flex-flow: column nowrap;
+   }
+
+   .reschild {
+      justify-content:flex-start;
+      align-content: flex-start;
+      align-items: flex-start;
+      flex-basis: 100%;
+      width: 100%;
+      padding: 12px;
+   }
+
+   #resplate {
+      flex-flow: row wrap;
+   }
+
+   #resrad {
+      flex-flow: column nowrap;
+      border-top: 1px solid #afb8d1;
+      border-left: none;
+   }
+
+   #resrute {
+      flex-flow: row wrap;
+      border-top: 1px solid #afb8d1;
+      border-left: none;
+   }
+
+}
+
+
+/************* Mobil *************/
+
+@media only screen and (max-width: 500px) {
+
+   .sjokoinfo {
+      flex-flow: column nowrap;
+
+      p {
+         flex-basis: 100%;
+         width: 100%;
+      }
+   }
+
+}
+
+
+/* END */

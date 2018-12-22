@@ -1,0 +1,68 @@
+// Mixins
+
+//Nettleserprefikser
+//legges inn slik: @include vendor-prefixes(CSS-egenskap, variabel fra config eller en verdi);
+@mixin vendor-prefixes($property, $value) {
+    -webkit-#{$property}: $value;
+    -moz-#{$property}: $value;
+    -ms-#{$property}: $value;
+    -o-#{$property}: $value;
+    -khtml-#{$property}: $value;
+    #{$property}: $value;
+}
+
+//Nettleserprefikser display:flex
+@mixin flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+//Nettleserprefikser flex: (-grow)0 (-shrink)1 (-basis)auto
+@mixin flex($values) {
+  -webkit-box-flex: $values;
+  -moz-box-flex: $values;
+  -webkit-flex: $values;
+  -ms-flex: $values;
+  flex: $values;
+}
+
+//Nettleserprefikser order: 1
+@mixin order($value) {
+  -webkit-box-ordinal-group: $value;  
+  -moz-box-ordinal-group: $value;
+  -ms-flex-order: $value;
+  -webkit-order: $value;
+  order: $value;
+}
+
+//Nettleserprefikser flex-flow: (direction)row (wrap)wrap
+@mixin flex-flow($values) {
+  -ms-flex-flow: $values;
+  -webkit-flex-flow: $values;
+  flex-flow: $values;
+}
+
+//Nettleserprefikser jusitfy-content: flex-start
+@mixin justify-content($value) {
+    -webkit-justify-content: $value;
+    justify-content: $value;
+}
+// center = center | flex-end = end | space-between = justify | space-around = distribute | flex-start = start
+@mixin justify-contentold($value) {
+    -moz-box-pack: $value;
+    -ms-flex-pack: $value;
+}
+
+//Nettleserprefikser align-items: stretch
+@mixin align-items($value) {
+    -webkit-align-items: $value;
+    align-items: $value;
+}
+// center = center | flex-end = end | baseline = baseline | stretch = stretch | flex-start = start
+@mixin align-itemsold($value) {
+    -moz-box-align: $value;
+    -ms-flex-align: $value;
+}

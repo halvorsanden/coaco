@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Sjokolator</title>
+      <link rel="stylesheet" media="screen" href="http://8yd.no/assets/yard/labs/sjokolator/style.css?v=20180703" >
+      <link rel="apple-touch-icon" sizes="180x180" href="http://8yd.no/apple-touch-icon.png?v=20171028">
+      <link rel="icon" type="image/png" sizes="32x32" href="http://8yd.no/favicon-32x32.png?v=20171028">
+      <link rel="icon" type="image/png" sizes="16x16" href="http://8yd.no/favicon-16x16.png?v=20171028">
+      <link rel="manifest" href="http://8yd.no/manifest.json?v=20171113">
+      <link rel="mask-icon" href="http://8yd.no/safari-pinned-tab.svg?v=20171028" color="#242f7a">
+      <link rel="shortcut icon" href="http://8yd.no/favicon.ico?v=20171028">
+      <meta name="theme-color" content="#ecf2f7">
+      <script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-3973710-1']);
+_gaq.push(['_setDomainName', '8yd.no']);
+_gaq.push(['_setAllowLinker', true]);
+_gaq.push(['_trackPageview']);
+
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+   </head>
+   <body>
+      <div class="hode">
+         <div class="sprog">Norsk | <a href="chocolator">English</a></div>
+         <div class="logo"><img src="http://8yd.no/assets/yard/labs/sjokolator/sjokologo.svg?v=20180509" alt="Sjokolator"></div>
+         <p>Regn om sjokolade fra vekt til biter. Fyll ut alle feltene, resten gjør sjokolatoren for deg.</p>
+      </div>
+      <div class="inn">
+         <form class="sjokoinfo">
+            <p class="gram">
+               <label for="gram">Hvor mange gram skal du ha?</label>
+               <input name="gram" type="number" pattern=”[0-9]*” min="1" max="1000" placeholder="Gram" id="gram" />
+            </p>        
+
+            <p class="platevekt">
+               <label for="gram">Hvor mange gram veier en plate?</label>
+               <input name="platevekt" type="number" pattern=”[0-9]*” min="1" max="1000" placeholder="Platevekt" id="platevekt" />
+            </p>        
+
+            <p class="ruterirad">
+               <label for="gram">Antall ruter per rad</label>
+               <input name="ruterirad" type="number" min="1" max="10" placeholder="Ruter" id="ruterirad" />
+            </p>
+
+            <p class="rader">
+               <label for="gram">Antall rader per plate</label>
+               <input name="rader" type="number" pattern=”[0-9]*” min="1" max="20" placeholder="Rader" id="rader" />
+            </p>
+
+         </form>
+      </div>
+      <div class="surface">
+
+         <div class="ut">
+            <p id="betar">Resultat</p>
+
+            <div id="resfigur">
+               <div id="resplate" class="reschild"></div>
+               <div id="resrad" class="reschild"></div>
+               <div id="resrute" class="reschild"></div>
+            </div>
+         </div>
+      </div>
+      <div class="roadmap">
+         <p class="versjon">
+            Sjokolator tar ikke ansvar for eventuell mislykket kokkelering.<br>
+            Sjokolator er et JavaScript-eksperiment utviklet av <a href="http://8yd.no">Halvor William Sanden</a>. Finner du en bug, ta kontakt.<br>
+            Versjon 20180703<br>
+         </p>
+         <h3>Veien videre</h3>
+         <p>Ikoner i skjema.</p>
+         <p>Nettleserkompatibilitet.</p>
+         <p>React-versjon</p>
+
+      </div>
+      <footer>
+         <a href="http://8yd.no"><img src="http://8yd.no/assets/yard/8yardlogo.svg" title="8 Yard" alt="8 Yard"></a>
+      </footer>
+      <script type="text/javascript" src="http://8yd.no/assets/yard/labs/sjokolator/sjokolator.js"></script>
+   </body>
+</html>
