@@ -15,14 +15,14 @@ html, input {
 }
 
 body {
-   background-color: #51415a;
-   color: #fff;
+   background-color: #8667a6;
+   color: #fcfdeb;
    width: 100%;
 }
 
 /* TOPP/INN */
 
-.hode, .inn {
+.hode, .inn, .ut {
    margin:0 auto;
    width: 100%;
    max-width: 1320px;
@@ -34,7 +34,7 @@ body {
 
    p {
       font-size: 1.5em;
-      color: #ffcb0f;
+      color: #fcfdeb;
       line-height: 1.35em;
    }
 }
@@ -57,18 +57,6 @@ a:hover {color: #d4c3d8;}
 .inn {
    padding: 1rem;
 }
-
-.surface {
-   width: 100%;
-   max-width: 1320px;
-   margin-left: auto;
-   margin-right: auto;
-   border-radius: 12px 12px 0 0;
-   background-color: #f6f6f6;
-   box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
-   padding-bottom: 2rem;
-}
-
 
 
 /* SKJEMA */
@@ -229,12 +217,10 @@ label {
    flex-basis: auto;
    width: 24px;
    height: 34px;
-   /*min-width: 6.25%;
-   /*width: 20%;*/
    background: #4b1f09 url("//8yd.no/assets/yard/labs/sjokolator/chock.png") no-repeat 0 0;
    background-size: cover;
    margin: 1px 0;
-   box-sizing: content-box; /* gjør at border og padding havner på innsida */
+   box-sizing: content-box;
 }
 
 #resrute > .sjokorute {
