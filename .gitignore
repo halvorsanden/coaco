@@ -1,2 +1,5 @@
 /graphics
 /node_modules
+www/style.css
+.DS_Store
+index.bundle.js
