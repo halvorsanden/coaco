@@ -4,12 +4,9 @@
 
 @media only screen and (max-width: 1024px) {
   .hode,
-  .inn {
-    padding: 0 5% 2rem 5%;
-  }
-
-  .surface {
-    padding: 0;
+  .inn,
+  .ut {
+    padding: 0 5%;
   }
 
   .ut {
@@ -19,7 +16,6 @@
     justify-content: center;
     align-content: center;
     align-items: center;
-    padding: 1.5rem;
   }
 
   .roadmap,
@@ -32,13 +28,13 @@
 
 @media only screen and (max-width: 768px) {
   h1 {
-    font-size: 2.5em;
+    font-size: 2.5rem;
   }
 
   .hode {
-    margin-bottom: 1.2em;
+    margin-bottom: 2em;
     p {
-      font-size: 1.1em;
+      font-size: 1.1rem;
     }
   }
 
@@ -49,12 +45,8 @@
     }
   }
 
-  .surface {
-    padding: 0;
-  }
-
   #betar {
-    font-size: 1.4em;
+    font-size: 1.4rem;
     line-height: 1.9em;
   }
 
@@ -77,13 +69,13 @@
 
   #resrad {
     flex-flow: column nowrap;
-    border-top: 1px solid #afb8d1;
+    border-top: 1px solid #8667a6;
     border-left: none;
   }
 
   #resrute {
     flex-flow: row wrap;
-    border-top: 1px solid #afb8d1;
+    border-top: 1px solid #8667a6;
     border-left: none;
   }
 }
@@ -91,6 +83,17 @@
 /************* Mobil *************/
 
 @media only screen and (max-width: 500px) {
+  
+  .sprog {
+    order: 1;
+    flex: 1 0 100%;
+  }
+
+  .logo {
+    order: 2;
+    flex: 1 0 100%;
+  }
+  
   .sjokoinfo {
     flex-flow: column nowrap;
 

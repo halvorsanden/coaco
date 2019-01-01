@@ -1,7 +1,7 @@
 // 8 YARD LABS
 // Codename: Chocolator
-// 2018 8yd.no
-// v 0.9
+// 2019 8yd.no
+// v 0.9.5
 /*jslint browser*/
 
 const inputs = document.querySelectorAll("input[type=number]");

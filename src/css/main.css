@@ -10,8 +10,8 @@ input {
 }
 
 body {
-  background-color: #8667a6;
-  color: #fcfdeb;
+  background-color: hsl(63, 82%, 96%);
+  color: hsl(270, 26%, 53%);
   width: 100%;
 }
 
@@ -20,43 +20,39 @@ body {
 .hode,
 .inn,
 .ut {
-  margin: 0 auto;
   width: 100%;
   max-width: 1320px;
 }
 
 .hode {
-  padding: 0 1rem 1rem;
-  margin-bottom: 2em;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  padding: 0 1em;
+  margin: 1em 0 4em;
 
   p {
-    font-size: 1.5em;
-    color: #fcfdeb;
+    flex: 1 1 100%;
+    font-size: 1.5rem;
     line-height: 1.35em;
+    order: 3;
   }
 }
 
 .sprog {
-  margin: 0.5rem 0 2.5rem 0;
-  color: #ffffff;
-  font-size: 0.9em;
-}
-
-a {
-  color: #c598f5;
-}
-a:hover {
-  color: #d4c3d8;
+  flex: 0 1 auto;
+  margin-bottom: 1.5em;
+  font-size: 0.9rem;
 }
 
 .logo {
-  width: 50%;
+  flex: 1 0 auto;
   max-width: 200px;
   margin-bottom: 1em;
 }
 
 .inn {
-  padding: 1rem;
+  padding: 1em;
 }
 
 /* SKJEMA */
@@ -70,9 +66,7 @@ a:hover {
   align-items: flex-end;
 
   p {
-    flex-grow: 0;
-    flex-shrink: 1;
-    flex-basis: 24%;
+    flex: 0 1 24%;
     width: 24%;
   }
 }
@@ -83,16 +77,16 @@ label {
 }
 
 .sjokoinfo input {
-  background-color: #483452;
-  color: #f6f6f6;
+  background-color: hsl(63, 40%, 90%);;
+  color: hsl(270, 26%, 53%);
   width: 92%;
   padding: 3px 6px 4px;
   border: 0;
-  border-bottom: 1px solid #d4c3d8;
+  border-bottom: 1px solid hsl(270, 26%, 53%);
   border-radius: 3px 3px 0 0;
   outline: none;
-  height: 2rem;
-  font-size: 1em;
+  height: 2em;
+  font-size: 1rem;
   margin-bottom: 20px;
   box-shadow: none;
   box-sizing: content-box;
@@ -100,30 +94,19 @@ label {
 
 .sjokoinfo input:focus {
   padding: 3px 6px 3px;
-  border-bottom: 2px solid #f6f6f6;
+  border-bottom: 2px solid hsl(270, 26%, 53%);
   transition: all 0.5s;
 }
 
 ::placeholder {
-  /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: #d4c3d8;
+  color: hsl(270, 26%, 53%);
   opacity: 1; /* Firefox */
 }
 
-:-ms-input-placeholder {
-  /* Internet Explorer 10-11 */
-  color: #d4c3d8;
-}
-
-::-ms-input-placeholder {
-  /*Edge*/
-  color: #d4c3d8;
-}
-
 label {
-  font-size: 0.9em;
+  font-size: 0.9rem;
   font-weight: 500;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.3em;
 }
 
 /* RESULTAT */
@@ -135,18 +118,16 @@ label {
   justify-content: center;
   align-content: center;
   align-items: center;
-  padding: 1rem;
+  padding: 1em;
 }
 
 #betar {
-  font-size: 1.8em;
-  line-height: 2.1em;
-  color: #4d3852;
+  font-size: 1.8rem;
   font-weight: 400;
-  padding-bottom: 1rem;
-  margin-bottom: 2rem;
+  padding-bottom: 1em;
+  margin-bottom: 1em;
   width: 100%;
-  border-bottom: 1px solid #d4c3d8;
+  border-bottom: 1px solid hsl(270, 26%, 53%);
 }
 
 #resfigur {
@@ -176,12 +157,12 @@ label {
 
 #resrad {
   flex-flow: column nowrap;
-  border-left: 1px solid #d4c3d8;
+  border-left: 1px solid hsl(270, 26%, 53%);
 }
 
 #resrute {
   flex-flow: row wrap;
-  border-left: 1px solid #d4c3d8;
+  border-left: 1px solid hsl(270, 26%, 53%);
 }
 
 .sjokoplate {
@@ -194,7 +175,7 @@ label {
   flex-shrink: 1;
   flex-basis: auto;
   margin: 4px;
-  background-color: #7c3a2d;
+  background-color: hsl(10, 47%, 33%);
   padding: 2px;
   border-radius: 3px;
 }
@@ -220,7 +201,7 @@ label {
   flex-basis: auto;
   width: 24px;
   height: 34px;
-  background: #4b1f09 url("//8yd.no/assets/yard/labs/sjokolator/chock.png")
+  background: hsl(20, 79%, 16%) url("//8yd.no/assets/yard/labs/sjokolator/chock.png")
     no-repeat 0 0;
   background-size: cover;
   margin: 1px 0;
@@ -234,19 +215,18 @@ label {
 /* ROADMAP */
 
 .roadmap {
-  margin: 2rem auto 0 auto;
+  margin: 2em auto 0 auto;
   width: 100%;
-  padding: 1rem;
+  padding: 1em;
   max-width: 1320px;
 }
 
 /* FOT */
 
 footer {
-  background: #fff;
-  margin-top: 2rem;
+  margin-top: 2em;
   padding: 20px;
-  font-size: 0.7em;
+  font-size: 0.7rem;
   line-height: 1.2em;
 
   img {
