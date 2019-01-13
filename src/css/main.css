@@ -15,11 +15,25 @@ body {
   width: 100%;
 }
 
+a {
+  color: hsl(270, 26%, 53%);
+}
+a:hover {
+  color: hsl(270, 26%, 33%);
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.35em;
+}
+
+
 /* TOPP/INN */
 
 .hode,
 .inn,
-.ut {
+.ut,
+footer {
   width: 100%;
   max-width: 1320px;
   margin-left: auto;
@@ -33,13 +47,6 @@ body {
   padding: 0 1em;
   margin-top: 1em;
   margin-bottom: 4em;
-
-  p {
-    flex: 1 1 100%;
-    font-size: 1.5rem;
-    line-height: 1.35em;
-    order: 3;
-  }
 }
 
 .sprog {
@@ -49,9 +56,19 @@ body {
 }
 
 .logo {
-  flex: 1 0 auto;
-  max-width: 200px;
-  margin-bottom: 1em;
+  flex: 0 1 10em;
+  margin-bottom: 1.6em;
+}
+
+.intro {
+  flex: 1 0 100%;
+  order: 3;
+}
+
+.introtext {
+  max-width: 900px;
+  font-size: 1.5rem;
+  line-height: 1.35em;
 }
 
 .inn {
@@ -127,10 +144,8 @@ label {
 #betar {
   font-size: 1.8rem;
   font-weight: 400;
-  padding-bottom: 1em;
   margin-bottom: 1em;
   width: 100%;
-  border-bottom: 1px solid hsl(270, 26%, 53%);
 }
 
 #resfigur {
@@ -140,6 +155,9 @@ label {
   align-content: stretch;
   align-items: stretch;
   width: 100%;
+  border-bottom: 1px solid hsl(270, 26%, 53%);
+  border-top: 1px solid hsl(270, 26%, 53%);
+  padding: 1em 0;
 }
 
 .reschild {
@@ -160,12 +178,10 @@ label {
 
 #resrad {
   flex-flow: column nowrap;
-  border-left: 1px solid hsl(270, 26%, 53%);
 }
 
 #resrute {
   flex-flow: row wrap;
-  border-left: 1px solid hsl(270, 26%, 53%);
 }
 
 .sjokoplate {
@@ -215,24 +231,74 @@ label {
   margin: 3px;
 }
 
-/* ROADMAP */
-
-.roadmap {
-  margin: 2em auto 0 auto;
-  width: 100%;
-  padding: 1em;
-  max-width: 1320px;
+/* fot */
+footer {
+  padding: 0 1.18em;
+  margin-top: 4em;
+  margin-bottom: 1em;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-column-gap: 2%;
+  grid-template-rows: auto auto auto;
+  grid-row-gap: 1em;
+  font-size: 0.85rem;
+  line-height: 1.35em;
 }
 
-/* FOT */
+.footer__disclaimer {
+  grid-row: 1;
+  grid-column: 1 / 7;
+}
 
-footer {
-  margin-top: 2em;
-  padding: 20px;
-  font-size: 0.7rem;
-  line-height: 1.2em;
+.footer__about {
+  grid-row: 2;
+  grid-column: 1 / 7;
+}
 
-  img {
-    width: 30px;
+.footer__version {
+  grid-row: 3;
+  grid-column: 1 / 4;
+}
+
+.footer__logo {
+  grid-row: 3;
+  grid-column: 4 / 7;
+  text-align: right;
+}
+
+.devlogo,
+.devlogo:visited {
+  color: #6e6e6e;
+}
+
+.devlogo:hover,
+.devlogo:active {
+  color: #444;
+}
+
+/************* Over 800 *************/
+@media only screen and (min-width: 800px) {
+  footer {
+    grid-row-gap: 0;
+  }
+
+  .footer__disclaimer {
+    grid-row: 1 / 4;
+    grid-column: 1 / 3;
+  }
+
+  .footer__about {
+    grid-row: 1 / 4;
+    grid-column: 3 / 5;
+  }
+
+  .footer__version {
+    grid-row: 1 / 4;
+    grid-column: 6;
+  }
+
+  .footer__logo {
+    grid-row: 1 / 4;
+    grid-column: 7;
   }
 }
