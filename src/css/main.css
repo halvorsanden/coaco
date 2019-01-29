@@ -269,10 +269,12 @@ footer {
 .devlogo,
 .devlogo:visited {
   color: #6e6e6e;
+  fill: currentColor;
 }
 
 .devlogo:hover,
-.devlogo:active {
+.devlogo:active,
+.devlogo:focus {
   color: #444;
 }
 
