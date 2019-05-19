@@ -1,175 +1,170 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chocolator</title>
-    <link
-      href="https://fonts.googleapis.com/css?family=Work+Sans:400,500"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      media="screen"
-      href="http://8yd.no/assets/yard/labs/sjokolator/style.css?v=20190129"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="http://8yd.no/apple-touch-icon.png?v=20171028"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="http://8yd.no/favicon-32x32.png?v=20171028"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="http://8yd.no/favicon-16x16.png?v=20171028"
-    />
-    <link rel="manifest" href="http://8yd.no/manifest.json?v=20171113" />
-    <link
-      rel="mask-icon"
-      href="http://8yd.no/safari-pinned-tab.svg?v=20171028"
-      color="#242f7a"
-    />
-    <link rel="shortcut icon" href="http://8yd.no/favicon.ico?v=20171028" />
-    <meta name="theme-color" content="#ecf2f7" />
-    <script type="text/javascript">
-      var _gaq = _gaq || [];
-      _gaq.push(["_setAccount", "UA-3973710-1"]);
-      _gaq.push(["_setDomainName", "8yd.no"]);
-      _gaq.push(["_setAllowLinker", true]);
-      _gaq.push(["_trackPageview"]);
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chocolator</title>
+  <link
+    href="https://fonts.googleapis.com/css?family=Work+Sans:400,500"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    media="screen"
+    href="http://8yd.no/assets/yard/labs/sjokolator/style.css?v=20190129"
+  />
+  <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="http://8yd.no/apple-touch-icon.png?v=20171028"
+  />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="32x32"
+    href="http://8yd.no/favicon-32x32.png?v=20171028"
+  />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="16x16"
+    href="http://8yd.no/favicon-16x16.png?v=20171028"
+  />
+  <link rel="manifest" href="http://8yd.no/manifest.json?v=20171113" />
+  <link
+    rel="mask-icon"
+    href="http://8yd.no/safari-pinned-tab.svg?v=20171028"
+    color="#242f7a"
+  />
+  <link rel="shortcut icon" href="http://8yd.no/favicon.ico?v=20171028" />
+  <meta name="theme-color" content="#ecf2f7" />
+  <script
+    async
+    src="http://8yd.no/assets/yard/labs/sjokolator/index.bundle.js?v=201905182115"
+  ></script>
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(["_setAccount", "UA-3973710-1"]);
+    _gaq.push(["_setDomainName", "8yd.no"]);
+    _gaq.push(["_setAllowLinker", true]);
+    _gaq.push(["_trackPageview"]);
 
-      (function() {
-        var ga = document.createElement("script");
-        ga.type = "text/javascript";
-        ga.async = true;
-        ga.src =
-          ("https:" == document.location.protocol
-            ? "https://ssl"
-            : "http://www") + ".google-analytics.com/ga.js";
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(ga, s);
-      })();
-    </script>
-  </head>
-  <body>
-    <div class="hode">
-      <div class="logo">
-        <img
-          src="http://8yd.no/assets/yard/labs/sjokolator/sjokologo-en.svg?v=20180509"
-          alt="Chocolator"
+    (function() {
+      var ga = document.createElement("script");
+      ga.type = "text/javascript";
+      ga.async = true;
+      ga.src =
+        ("https:" == document.location.protocol
+          ? "https://ssl"
+          : "http://www") + ".google-analytics.com/ga.js";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+  <div class="hode">
+    <div class="logo">
+      <img
+        src="http://8yd.no/assets/yard/labs/sjokolator/sjokologo-en.svg?v=20180509"
+        alt="Chocolator"
+      />
+    </div>
+    <div class="sprog"><a href="sjokolator">Norsk</a> | English</div>
+    <div class="intro">
+      <p class="introtext">
+        Converts weight to number of pieces of chocolate. Complete the form, use
+        the same weight unit in both fields, and The Chocolator does the rest.
+      </p>
+    </div>
+  </div>
+
+  <div class="inn">
+    <form class="sjokoinfo">
+      <p class="gram">
+        <label for="gram">What amount of chocolate is in the recipe?</label>
+        <input
+          name="gram"
+          type="number"
+          pattern="”[0-9]*”"
+          min="1"
+          max="1000"
+          placeholder="Weight"
+          id="gram"
         />
-      </div>
-      <div class="sprog"><a href="sjokolator">Norsk</a> | English</div>
-      <div class="intro">
-        <p class="introtext">
-          Converts weight to number of pieces of chocolate. Complete the form,
-          use the same weight unit in both fields, and The Chocolator does the
-          rest.
-        </p>
-      </div>
+      </p>
+
+      <p class="platevekt">
+        <label for="gram">How much does one bar weigh?</label>
+        <input
+          name="platevekt"
+          type="number"
+          pattern="”[0-9]*”"
+          min="1"
+          max="1000"
+          placeholder="Use the same unit as above"
+          id="platevekt"
+        />
+      </p>
+
+      <p class="ruterirad">
+        <label for="gram">Squares per row</label>
+        <input
+          name="ruterirad"
+          type="number"
+          min="1"
+          max="10"
+          placeholder="Squares"
+          id="ruterirad"
+        />
+      </p>
+
+      <p class="rader">
+        <label for="gram">Rows per bar</label>
+        <input
+          name="rader"
+          type="number"
+          pattern="”[0-9]*”"
+          min="1"
+          max="20"
+          placeholder="Rows"
+          id="rader"
+        />
+      </p>
+    </form>
+  </div>
+  <div class="ut">
+    <p id="betar"></p>
+    <div id="resfigur">
+      <div id="resplate" class="reschild"></div>
+      <div id="resrad" class="reschild"></div>
+      <div id="resrute" class="reschild"></div>
     </div>
+  </div>
 
-    <div class="inn">
-      <form class="sjokoinfo">
-        <p class="gram">
-          <label for="gram">What amount of chocolate is in the recipe?</label>
-          <input
-            name="gram"
-            type="number"
-            pattern="”[0-9]*”"
-            min="1"
-            max="1000"
-            placeholder="Weight"
-            id="gram"
-          />
-        </p>
-
-        <p class="platevekt">
-          <label for="gram">How much does one bar weigh?</label>
-          <input
-            name="platevekt"
-            type="number"
-            pattern="”[0-9]*”"
-            min="1"
-            max="1000"
-            placeholder="Use the same unit as above"
-            id="platevekt"
-          />
-        </p>
-
-        <p class="ruterirad">
-          <label for="gram">Squares per row</label>
-          <input
-            name="ruterirad"
-            type="number"
-            min="1"
-            max="10"
-            placeholder="Squares"
-            id="ruterirad"
-          />
-        </p>
-
-        <p class="rader">
-          <label for="gram">Rows per bar</label>
-          <input
-            name="rader"
-            type="number"
-            pattern="”[0-9]*”"
-            min="1"
-            max="20"
-            placeholder="Rows"
-            id="rader"
-          />
-        </p>
-      </form>
+  <footer>
+    <div class="footer__disclaimer">
+      The chocolator is not responsible for any kitchen failures.
     </div>
-    <div class="ut">
-      <p id="betar"></p>
-      <div id="resfigur">
-        <div id="resplate" class="reschild"></div>
-        <div id="resrad" class="reschild"></div>
-        <div id="resrute" class="reschild"></div>
-      </div>
+    <div class="footer__about">
+      The Chocolator is a JavaScript experiment developed by
+      <a href="http://8yd.no">Halvor William Sanden</a>. If you catch a bug,
+      please let me know.<br />
     </div>
-
-    <footer>
-      <div class="footer__disclaimer">
-        The chocolator is not responsible for any kitchen failures.
-      </div>
-      <div class="footer__about">
-        The Chocolator is a JavaScript experiment developed by
-        <a href="http://8yd.no">Halvor William Sanden</a>. If you catch a bug,
-        please let me know.<br />
-      </div>
-      <div class="footer__version">Version 20190113</div>
-      <div class="footer__logo">
-        <a class="devlogo noline" href="http://8yd.no">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 601 282"
-            width="74"
-          >
-            <path
-              d="M58 261c4 15 19 24 33 20l27-8-25-92-53 14 18 66zm78-77l53-15-28-105-53 14 28 106zM19 116l53-14L47 9l-27 7C6 20-3 35 1 50l18 66zm97 45l-14-53-93 25 14 52 93-24zm77 78c15-4 24-19 20-34l-7-26-93 25 14 53 66-18zM170 47l-7-27c-4-14-19-23-33-19L64 19l14 53 92-25z"
-            />
-            <path
-              d="M322 161l7-2c2-1 3-3 3-5s-1-4-3-5l-7-2-7 2-2 5 2 5 7 2zm0-24l6-1 2-5-2-5-6-2-6 2-2 4v1c0 2 1 3 3 4 1 2 3 2 5 2zm0 34l-8-1-7-4-4-5-2-6 2-8 7-6-5-4c-2-2-2-5-2-8l1-6 4-5 6-3 8-1 8 1 6 3 4 5a13 13 0 0 1 2 6l-2 8-5 4 6 6c2 2 3 4 3 7v1a14 14 0 0 1-7 12l-6 3-9 1zm74-23l-21-33h14l13 22 14-22h13l-21 33v22h-12v-22zm66-1l-7-18-7 18h14zm-12-33h11l24 56h-13l-5-12h-24l-5 12h-12l24-56zm66 28l7-2c2-1 2-4 2-6l-2-6c-2-2-4-2-7-2h-12v16h12zm-25-27h26c7 0 12 2 16 5 3 4 5 8 5 13s-2 8-4 11-5 5-8 6l13 20h-14l-12-18h-9v18h-13v-55zm81 44l6-1 6-3 3-6 1-6v-1l-1-6-3-6-6-3-6-1h-10v33h10zm-22-44h22l12 2 9 6a26 26 0 0 1 6 8l2 11-2 11-6 9-9 6-12 2h-22v-55z"
-            />
-          </svg>
-        </a>
-      </div>
-    </footer>
-
-    <script
-      type="text/javascript"
-      src="http://8yd.no/assets/yard/labs/sjokolator/sjokolator-en.js"
-    ></script>
-  </body>
+    <div class="footer__version">Version 20190113</div>
+    <div class="footer__logo">
+      <a class="devlogo noline" href="http://8yd.no">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 601 282"
+          width="74"
+        >
+          <path
+            d="M58 261c4 15 19 24 33 20l27-8-25-92-53 14 18 66zm78-77l53-15-28-105-53 14 28 106zM19 116l53-14L47 9l-27 7C6 20-3 35 1 50l18 66zm97 45l-14-53-93 25 14 52 93-24zm77 78c15-4 24-19 20-34l-7-26-93 25 14 53 66-18zM170 47l-7-27c-4-14-19-23-33-19L64 19l14 53 92-25z"
+          />
+          <path
+            d="M322 161l7-2c2-1 3-3 3-5s-1-4-3-5l-7-2-7 2-2 5 2 5 7 2zm0-24l6-1 2-5-2-5-6-2-6 2-2 4v1c0 2 1 3 3 4 1 2 3 2 5 2zm0 34l-8-1-7-4-4-5-2-6 2-8 7-6-5-4c-2-2-2-5-2-8l1-6 4-5 6-3 8-1 8 1 6 3 4 5a13 13 0 0 1 2 6l-2 8-5 4 6 6c2 2 3 4 3 7v1a14 14 0 0 1-7 12l-6 3-9 1zm74-23l-21-33h14l13 22 14-22h13l-21 33v22h-12v-22zm66-1l-7-18-7 18h14zm-12-33h11l24 56h-13l-5-12h-24l-5 12h-12l24-56zm66 28l7-2c2-1 2-4 2-6l-2-6c-2-2-4-2-7-2h-12v16h12zm-25-27h26c7 0 12 2 16 5 3 4 5 8 5 13s-2 8-4 11-5 5-8 6l13 20h-14l-12-18h-9v18h-13v-55zm81 44l6-1 6-3 3-6 1-6v-1l-1-6-3-6-6-3-6-1h-10v33h10zm-22-44h22l12 2 9 6a26 26 0 0 1 6 8l2 11-2 11-6 9-9 6-12 2h-22v-55z"
+          />
+        </svg>
+      </a>
+    </div>
+  </footer>
 </html>

@@ -3,3 +3,5 @@
 www/style.css
 .DS_Store
 index.bundle.js
+__pychache__/
+afts.py

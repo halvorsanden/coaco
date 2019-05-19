@@ -3,7 +3,6 @@ module.exports = {
       'postcss-import': {},
       'postcss-simple-vars': {},
       'postcss-nested': {},
-      'postcss-svg': {},
       'autoprefixer': {
         grid: true,
         browsers: ['last 2 versions', '> 8%'],

@@ -1,6 +1,3 @@
-// 8 YARD LABS
-// Codename: Chocolator
-// 2019 8yd.no
 // v 0.9.5
 /*jslint browser*/
 
@@ -44,35 +41,36 @@ function compute() {
             // like mye som i en plate eller like mange ruter totalt som i en plate
             if (gram === platevekt || ruterTot === (raderPrPlate * ruterPrRad)) {
                biter.innerHTML =
-                  "Use the whole bar, actually.";
+                  "Her må du bruke hele platen.";
             }
 
             // flere ruter enn i en plate
             else if (ruterTot > ruterPrPlate) {
                biter.innerHTML =
-                  `You need ${platerTot} bar${(platerTot === 1) ? ", " : "s, "}${raderOvPlater} row${(raderOvPlater === 1) ? " and " : "s and "}${ruterOvRaderOvPlater} square${(ruterOvRaderOvPlater === 1) ? ". " : "s. "}<br>Total: ${ruterTot} square${(ruterTot === 1) ? "." : "s."}`;
+                  `Du trenger ${platerTot} plate${(platerTot === 1) ? ", " : "r, "}${raderOvPlater} rad${(raderOvPlater === 1) ? " og " : "er og "}${ruterOvRaderOvPlater} rute${(ruterOvRaderOvPlater === 1) ? ". " : "r. "}<br>Totalt ${ruterTot} rute${(ruterTot === 1) ? "." : "r."}`;
             }
 
             // færre enn 1 rute
             else if (ruterTot < 1) {
                biter.innerHTML =
-                  "By my calculations, that's actually less than a whole square. That's either quite a big bar or a lousy recipe.";
+                  "Nå blir resultatet mindre enn en hel rute. Ser ut som du har en sjokolade med kjempestore ruter eller en dårlig oppskrift. Er en oppskrift som krever mindre enn en hel sjokoladebit noe å bry med?";
             }
 
             // færre ruter enn i en rad
             else if (ruterTot < ruterPrRad) {
                biter.innerHTML =
-                  `You'll need only ${ruterTot} square${(ruterTot === 1) ? "." : "s."}`;
+                  `Du trenger bare ${ruterTot} rute${(ruterTot === 1) ? "." : "r."}`;
             }
 
             // antall rader og biter fra 1 og oppover
             else {
                biter.innerHTML =
-                  `You'll need ${raderTot} row${(raderTot === 1) ? " and " : "s and "}${ruterOvRader} square${(ruterOvRader === 1) ? "." : "s."}<br>Total: ${ruterTot} square${(ruterTot === 1) ? "." : "s."}`;
+                  `Du trenger ${raderTot} rad${(raderTot === 1) ? " og " : "er og "}${ruterOvRader} rute${(ruterOvRader === 1) ? "." : "r."}<br>Totalt ${ruterTot} rute${(ruterTot === 1) ? "." : "r."}`;
             }
+
          } else {
             biter.innerHTML =
-               "The result will appear as soon as the form is complete.";
+               "Resultatet kommer når alle feltene er utfylt.";
          }
       }
 
@@ -153,5 +151,5 @@ function compute() {
    }, 500);
 }
 
-inputs.forEach((item) => item.addEventListener("change", compute));
-inputs.forEach((item) => item.addEventListener("keyup", compute));
+eninputs.forEach((item) => item.addEventListener("change", compute));
+eninputs.forEach((item) => item.addEventListener("keyup", compute));
