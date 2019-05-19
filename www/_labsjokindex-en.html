@@ -4,13 +4,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Chocolator</title>
   <link
-    href="https://fonts.googleapis.com/css?family=Work+Sans:400,500"
-    rel="stylesheet"
-  />
-  <link
     rel="stylesheet"
     media="screen"
-    href="http://8yd.no/assets/yard/labs/sjokolator/style.css?v=201905191405"
+    href="http://8yd.no/assets/yard/labs/sjokolator/style.css?v=201905192037"
   />
   <link
     rel="apple-touch-icon"
@@ -29,7 +25,6 @@
     sizes="16x16"
     href="http://8yd.no/favicon-16x16.png?v=20171028"
   />
-  <link rel="manifest" href="http://8yd.no/manifest.json?v=20171113" />
   <link
     rel="mask-icon"
     href="http://8yd.no/safari-pinned-tab.svg?v=20171028"
@@ -39,7 +34,7 @@
   <meta name="theme-color" content="#ecf2f7" />
   <script
     async
-    src="http://8yd.no/assets/yard/labs/sjokolator/index.bundle.js?v=201905191405"
+    src="http://8yd.no/assets/yard/labs/sjokolator/index.bundle.js?v=201905192037"
   ></script>
   <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -64,7 +59,7 @@
   <div class="hode">
     <div class="logo">
       <img
-        src="http://8yd.no/assets/yard/labs/sjokolator/sjokologo-en.svg?v=20180509"
+        src="http://8yd.no/assets/yard/labs/sjokolator/sjokologo-en.svg?v=201905191900"
         alt="Chocolator"
       />
     </div>
@@ -80,14 +75,13 @@
   <div class="inn">
     <form class="sjokoinfo">
       <p class="gram">
-        <label for="gram">What amount of chocolate is in the recipe?</label>
+        <label for="gram">Weight of chocolate in the recipe</label>
         <input
           name="gram"
           type="number"
           pattern="”[0-9]*”"
           min="1"
           max="1000"
-          placeholder="Weight"
           id="gram"
           data-lang="en"
         />
@@ -101,7 +95,6 @@
           pattern="”[0-9]*”"
           min="1"
           max="1000"
-          placeholder="Use the same unit as above"
           id="platevekt"
           data-lang="en"
         />
@@ -114,7 +107,6 @@
           type="number"
           min="1"
           max="10"
-          placeholder="Squares"
           id="ruterirad"
           data-lang="en"
         />
@@ -128,7 +120,6 @@
           pattern="”[0-9]*”"
           min="1"
           max="20"
-          placeholder="Rows"
           id="rader"
           data-lang="en"
         />
@@ -136,22 +127,21 @@
     </form>
   </div>
   <div class="ut">
-    <p id="betar"></p>
-    <div id="resfigur">
-      <div id="resplate" class="reschild"></div>
-      <div id="resrad" class="reschild"></div>
-      <div id="resrute" class="reschild"></div>
+    <p id="betar" class="betar"></p>
+    <div id="resfigur" class="resfigur">
+      <div id="resplate" class="reschild resplate"></div>
+      <div id="resrad" class="reschild resrad"></div>
+      <div id="resrute" class="reschild resrute"></div>
     </div>
   </div>
 
   <footer>
     <div class="footer__disclaimer">
-      The chocolator is not responsible for any kitchen failures.
+      Chocolator is not responsible for any kitchen failures.
     </div>
     <div class="footer__about">
-      The Chocolator is a JavaScript experiment developed by
-      <a href="http://8yd.no">Halvor William Sanden</a>. If you catch a bug,
-      please let me know.<br />
+      Chocolator is a JavaScript experiment<br />
+      <a href="https://github.com/halvorsanden/coaco">GitHub repo</a>
     </div>
     <div class="footer__version">Version 20190519</div>
     <div class="footer__logo">

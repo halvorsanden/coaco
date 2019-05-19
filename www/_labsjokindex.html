@@ -4,13 +4,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sjokolator</title>
   <link
-    href="https://fonts.googleapis.com/css?family=Work+Sans:400,500"
-    rel="stylesheet"
-  />
-  <link
     rel="stylesheet"
     media="screen"
-    href="http://8yd.no/assets/yard/labs/sjokolator/style.css?v=201905191405"
+    href="http://8yd.no/assets/yard/labs/sjokolator/style.css?v=201905192037"
   />
   <link
     rel="apple-touch-icon"
@@ -29,7 +25,6 @@
     sizes="16x16"
     href="http://8yd.no/favicon-16x16.png?v=20171028"
   />
-  <link rel="manifest" href="http://8yd.no/manifest.json?v=20171113" />
   <link
     rel="mask-icon"
     href="http://8yd.no/safari-pinned-tab.svg?v=20171028"
@@ -39,7 +34,7 @@
   <meta name="theme-color" content="#ecf2f7" />
   <script
     async
-    src="http://8yd.no/assets/yard/labs/sjokolator/index.bundle.js?v=201905191405"
+    src="http://8yd.no/assets/yard/labs/sjokolator/index.bundle.js?v=201905192037"
   ></script>
   <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -64,7 +59,7 @@
   <div class="hode">
     <div class="logo">
       <img
-        src="http://8yd.no/assets/yard/labs/sjokolator/sjokologo.svg?v=20180509"
+        src="http://8yd.no/assets/yard/labs/sjokolator/sjokologo.svg?v=201905191900"
         alt="Sjokolator"
       />
     </div>
@@ -86,7 +81,6 @@
           pattern="”[0-9]*”"
           min="1"
           max="1000"
-          placeholder="Gram"
           id="gram"
           data-lang="nb"
         />
@@ -100,7 +94,6 @@
           pattern="”[0-9]*”"
           min="1"
           max="1000"
-          placeholder="Platevekt"
           id="platevekt"
           data-lang="nb"
         />
@@ -113,7 +106,6 @@
           type="number"
           min="1"
           max="10"
-          placeholder="Ruter"
           id="ruterirad"
           data-lang="nb"
         />
@@ -127,7 +119,6 @@
           pattern="”[0-9]*”"
           min="1"
           max="20"
-          placeholder="Rader"
           id="rader"
           data-lang="nb"
         />
@@ -135,11 +126,11 @@
     </form>
   </div>
   <div class="ut">
-    <p id="betar"></p>
-    <div id="resfigur">
-      <div id="resplate" class="reschild"></div>
-      <div id="resrad" class="reschild"></div>
-      <div id="resrute" class="reschild"></div>
+    <p id="betar" class="betar"></p>
+    <div id="resfigur" class="resfigur">
+      <div id="resplate" class="reschild resplate"></div>
+      <div id="resrad" class="reschild resrad"></div>
+      <div id="resrute" class="reschild resrute"></div>
     </div>
   </div>
   <footer>
@@ -147,9 +138,8 @@
       Sjokolator tar ikke ansvar for eventuell mislykket kokkelering.
     </div>
     <div class="footer__about">
-      Sjokolator er et JavaScript-eksperiment utviklet av
-      <a href="http://8yd.no">Halvor William Sanden</a>. Finner du en bug, ta
-      kontakt.<br />
+      Sjokolator er et JavaScript-eksperiment.<br />
+      <a href="https://github.com/halvorsanden/coaco">GitHub-repo</a>
     </div>
     <div class="footer__version">Versjon 20190519</div>
     <div class="footer__logo">

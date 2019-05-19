@@ -1,25 +1,25 @@
-/* 8 YARD LABS */
-/* Codename: Sjokolator/Chocolator */
-/* 2019 8yd.no */
-/* v 0.9 */
-
 html,
-input {
-  font-family: "Work Sans", sans-serif;
-  letter-spacing: -0.02em;
+input, 
+button {
+  font-family: system-ui, /* macOS 10.11-10.12 */ -apple-system,
+    /* Windows 6+ */ Segoe UI, /* Android 4+ */ Roboto,
+    /* Ubuntu 10.10+ */ Ubuntu, /* Gnome 3+ */ Cantarell,
+    /* KDE Plasma 5+ */ Noto Sans, /* fallback */ sans-serif,
+    /* macOS emoji */ "Apple Color Emoji", /* Windows emoji */ "Segoe UI Emoji",
+    /* Windows emoji */ "Segoe UI Symbol", /* Linux emoji */ "Noto Color Emoji";
 }
 
 body {
-  background-color: hsl(63, 82%, 96%);
-  color: hsl(270, 26%, 53%);
+  background-color: hsl(0, 0%, 94%);
+  color: hsl(207, 100%, 34%);
   width: 100%;
 }
 
 a {
-  color: hsl(270, 26%, 53%);
+  color: hsl(207, 100%, 34%);
 }
 a:hover {
-  color: hsl(270, 26%, 33%);
+  color: hsl(207, 100%, 20%);
 }
 
 p {
@@ -38,13 +38,14 @@ footer {
   max-width: 1320px;
   margin-left: auto;
   margin-right: auto;
+  padding-left: 5vw;
+  padding-right: 5vw;
 }
 
 .hode {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
-  padding: 0 1em;
   margin-top: 1em;
   margin-bottom: 4em;
 }
@@ -72,7 +73,8 @@ footer {
 }
 
 .inn {
-  padding: 1em;
+  padding-top: 1em;
+  padding-bottom: 1em;
 }
 
 /* SKJEMA */
@@ -97,12 +99,12 @@ label {
 }
 
 .sjokoinfo input {
-  background-color: hsl(63, 40%, 90%);;
-  color: hsl(270, 26%, 53%);
+  background-color: hsl(0, 0%, 100%);;
+  color: hsl(207, 100%, 34%);
   width: 92%;
   padding: 3px 6px 4px;
   border: 0;
-  border-bottom: 1px solid hsl(270, 26%, 53%);
+  border-bottom: 1px solid hsl(207, 100%, 34%);
   border-radius: 3px 3px 0 0;
   outline: none;
   height: 2em;
@@ -114,12 +116,12 @@ label {
 
 .sjokoinfo input:focus {
   padding: 3px 6px 3px;
-  border-bottom: 2px solid hsl(270, 26%, 53%);
+  border-bottom: 2px solid hsl(207, 100%, 34%);
   transition: all 0.5s;
 }
 
 ::placeholder {
-  color: hsl(270, 26%, 53%);
+  color: hsl(207, 100%, 34%);
   opacity: 1; /* Firefox */
 }
 
@@ -138,25 +140,25 @@ label {
   justify-content: center;
   align-content: center;
   align-items: center;
-  padding: 1em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  margin-bottom: 4em;
 }
 
-#betar {
+.betar {
   font-size: 1.8rem;
   font-weight: 400;
   margin-bottom: 1em;
   width: 100%;
 }
 
-#resfigur {
+.resfigur {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   align-content: stretch;
   align-items: stretch;
   width: 100%;
-  border-bottom: 1px solid hsl(270, 26%, 53%);
-  border-top: 1px solid hsl(270, 26%, 53%);
   padding: 1em 0;
 }
 
@@ -172,15 +174,15 @@ label {
   padding: 12px;
 }
 
-#resplate {
+.resplate {
   flex-flow: row wrap;
 }
 
-#resrad {
+.resrad {
   flex-flow: column nowrap;
 }
 
-#resrute {
+.resrute {
   flex-flow: row wrap;
 }
 
@@ -210,7 +212,7 @@ label {
   flex-basis: auto;
 }
 
-#resrad > .sjokorad {
+.resrad > .sjokorad {
   margin: 3px;
 }
 
@@ -227,15 +229,14 @@ label {
   box-sizing: content-box;
 }
 
-#resrute > .sjokorute {
+.resrute > .sjokorute {
   margin: 3px;
 }
 
 /* fot */
 footer {
-  padding: 0 1.18em;
-  margin-top: 4em;
-  margin-bottom: 1em;
+  padding-top: 1em;
+  padding-bottom: 1em;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-column-gap: 2%;
@@ -243,6 +244,7 @@ footer {
   grid-row-gap: 1em;
   font-size: 0.85rem;
   line-height: 1.35em;
+  border-top: 1px solid hsl(207, 100%, 34%);
 }
 
 .footer__disclaimer {
@@ -268,14 +270,14 @@ footer {
 
 .devlogo,
 .devlogo:visited {
-  color: #6e6e6e;
+  color: hsl(0, 0%, 44%);
   fill: currentColor;
 }
 
 .devlogo:hover,
 .devlogo:active,
 .devlogo:focus {
-  color: #444;
+  color: hsl(0, 0%, 24%);
 }
 
 /************* Over 800 *************/
@@ -291,7 +293,7 @@ footer {
 
   .footer__about {
     grid-row: 1 / 4;
-    grid-column: 3 / 5;
+    grid-column: 4 / 6;
   }
 
   .footer__version {

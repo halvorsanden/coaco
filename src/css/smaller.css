@@ -1,17 +1,6 @@
 /************* Små skjermer under 1024 *************/
 
 @media only screen and (max-width: 1024px) {
-  .hode,
-  .ut,
-  footer {
-    padding: 0 5%;
-  }
-
-  .inn {
-    padding-left: 5%;
-    padding-right: 5%;
-  }
-
   .ut {
     box-sizing: border-box;
     display: flex;
@@ -40,11 +29,11 @@
     }
   }
 
-  #betar {
+  .betar {
     font-size: 1.4rem;
   }
 
-  #resfigur {
+  .resfigur {
     flex-flow: column nowrap;
   }
 
@@ -57,15 +46,15 @@
     padding: 12px;
   }
 
-  #resplate {
+  .resplate {
     flex-flow: row wrap;
   }
 
-  #resrad {
+  .resrad {
     flex-flow: column nowrap;
   }
 
-  #resrute {
+  .resrute {
     flex-flow: row wrap;
   }
 }
