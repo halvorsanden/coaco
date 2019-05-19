@@ -1,7 +1,7 @@
-// v 0.9.5
+// v 0.9.6
 /*jslint browser*/
 
-const inputs = document.querySelectorAll("input[type=number]");
+const inputs = document.querySelectorAll("input[data-lang=nb]");
 
 function compute() {
    "use strict";
@@ -151,5 +151,5 @@ function compute() {
    }, 500);
 }
 
-eninputs.forEach((item) => item.addEventListener("change", compute));
-eninputs.forEach((item) => item.addEventListener("keyup", compute));
+inputs.forEach((item) => item.addEventListener("change", compute));
+inputs.forEach((item) => item.addEventListener("keyup", compute));

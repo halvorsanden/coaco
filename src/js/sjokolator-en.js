@@ -1,9 +1,9 @@
-// v 0.9.5
+// v 0.9.6
 /*jslint browser*/
 
-const inputs = document.querySelectorAll("input[type=number]");
+const inputsEn = document.querySelectorAll("input[data-lang=en]");
 
-function compute() {
+function computeEn() {
    "use strict";
 
    let timeout = null;
@@ -34,7 +34,7 @@ function compute() {
 
       const biter = document.getElementById("betar");
 
-      function renderText() {
+      function renderTextEn() {
          // når alle felter er fylt ut
          if ((gram && gram !== "0") && (platevekt && platevekt !== "0") && (ruterPrRad && ruterPrRad !== "0") && (raderPrPlate && raderPrPlate !== "0")) {
 
@@ -73,7 +73,7 @@ function compute() {
          }
       }
 
-      function renderFig() {
+      function renderFigEn() {
 
          //const figur = document.getElementById("resfigur");
 
@@ -144,11 +144,11 @@ function compute() {
          }
       }
 
-      renderText();
-      renderFig();
+      renderTextEn();
+      renderFigEn();
 
    }, 500);
 }
 
-inputs.forEach((item) => item.addEventListener("change", compute));
-inputs.forEach((item) => item.addEventListener("keyup", compute));
+inputsEn.forEach((item) => item.addEventListener("change", computeEn));
+inputsEn.forEach((item) => item.addEventListener("keyup", computeEn));
