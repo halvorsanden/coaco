@@ -1,7 +1,7 @@
 /graphics
 /node_modules
-www/style.css
+style.css*
 .DS_Store
-index.bundle.js
+index.bundle.js*
 afts.py
 /__pycache__

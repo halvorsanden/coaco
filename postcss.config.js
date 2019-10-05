@@ -1,14 +1,12 @@
 module.exports = {
-    plugins: {
-      'postcss-import': {},
-      'postcss-simple-vars': {},
-      'postcss-nested': {},
-      'autoprefixer': {
-        grid: true,
-        browsers: ['last 2 versions', '> 8%'],
-      },
-      'cssnano': {
-       removeQuotes: false
-      },
+  plugins: {
+    "postcss-import": {},
+    "postcss-css-variables": {},
+    autoprefixer: {
+      grid: true
     },
-  };
+    cssnano: {
+      removeQuotes: false
+    }
+  }
+};
