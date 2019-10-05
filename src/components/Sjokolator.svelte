@@ -4,6 +4,12 @@
 </script>
 
 <style>
+  :root {
+    --colr-primary: hsl(207, 100%, 34%);
+    --colr-text: hsl(0, 0%, 25%);
+    --colr-link: hsl(207, 100%, 34%);
+  }
+
   .inn {
     padding-top: 1em;
     padding-bottom: 1em;
@@ -29,11 +35,10 @@
 
   .sjokoinfo input {
     background-color: hsl(0, 0%, 100%);
-    color: hsl(207, 100%, 34%);
     width: 92%;
     padding: 3px 6px 4px;
     border: 0;
-    border-bottom: 1px solid var(--colr-secondary);
+    border-bottom: 1px solid var(--colr-primary);
     border-radius: 3px 3px 0 0;
     outline: none;
     height: 2em;
@@ -44,14 +49,9 @@
   }
 
   .sjokoinfo input:focus {
-    padding: 3px 6px 3px;
-    border-bottom: 2px solid hsl(207, 100%, 34%);
-    transition: all 0.5s;
-  }
-
-  ::placeholder {
-    color: hsl(207, 100%, 34%);
-    opacity: 1; /* Firefox */
+    padding: 3px 6px 2px;
+    border-bottom: 3px solid var(--colr-primary);
+    transition: all 0.15s;
   }
 
   label {

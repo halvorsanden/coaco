@@ -13,13 +13,13 @@ button {
 }
 
 body {
-  background-color: var(--colr-primary);
-  color: hsl(207, 100%, 34%);
+  background-color: hsl(0, 0%, 94%);
+  color: var(--colr-text);
   width: 100%;
 }
 
 a {
-  color: hsl(207, 100%, 34%);
+  color: var(--colr-link);
 }
 a:hover {
   color: hsl(207, 100%, 20%);

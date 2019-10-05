@@ -1,8 +1,5 @@
 :root {
-  --colr-primary: hsl(0, 0%, 94%);
-  --colr-secondary: hsl(207, 100%, 34%);
-  --colr-tetra: hsl(230, 39%, 10%);
-  --colr-text: hsl(230, 5%, 95%);
-  --colr-textsec: hsl(230, 15%, 85%);
-  --colr-link: hsl(200, 100%, 80%);
+  --colr-primary: hsl(207, 100%, 34%);
+  --colr-text: hsl(0, 0%, 25%);
+  --colr-link: hsl(207, 100%, 34%);
 }

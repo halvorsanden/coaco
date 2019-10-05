@@ -1,4 +1,9 @@
 <style>
+  :root {
+    --colr-primary: hsl(207, 100%, 34%);
+    --colr-text: hsl(0, 0%, 25%);
+    --colr-link: hsl(207, 100%, 34%);
+  }
   footer {
     padding-top: 1em;
     padding-bottom: 1em;
@@ -9,7 +14,7 @@
     grid-row-gap: 1em;
     font-size: 0.85rem;
     line-height: 1.35em;
-    border-top: 1px solid hsl(207, 100%, 34%);
+    border-top: 1px solid var(--colr-primary);
   }
 
   .footer__disclaimer {
@@ -42,7 +47,7 @@
   .devlogo:hover,
   .devlogo:active,
   .devlogo:focus {
-    color: hsl(0, 0%, 24%);
+    color: hsl(0, 0%, 25%);
   }
 
   @media only screen and (min-width: 800px) {
