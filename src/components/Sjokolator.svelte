@@ -1,6 +1,50 @@
 <script>
   import Header from "./Header.svelte";
   import Footer from "./Footer.svelte";
+
+  let gram = null;
+  let platevekt = null;
+  let ruterPrRad = null;
+  let raderPrPlate = null;
+  let ruterTot;
+  let raderTot;
+  let ruterPrPlate;
+  let ruterOvRader;
+  let platerTot;
+  let ruterOvPlater;
+  let raderOvPlater;
+  let ruterOvRaderOvPlater;
+  let allValues;
+  let wholeBar;
+
+  const compute = function() {
+    // Ruter totalt
+    ruterTot = Math.round(gram / (platevekt / (raderPrPlate * ruterPrRad)));
+    // Rader totalt
+    raderTot = Math.floor(ruterTot / ruterPrRad);
+    // Ruter pr plate
+    ruterPrPlate = ruterPrRad * raderPrPlate;
+    // Overskytende ruter fra radene
+    ruterOvRader = ruterTot - raderTot * ruterPrRad;
+    // Plater totalt
+    platerTot = Math.floor(ruterTot / (raderPrPlate * ruterPrRad));
+    // Overskytende ruter fra platene
+    ruterOvPlater = ruterTot - platerTot * (raderPrPlate * ruterPrRad);
+    // Overskytende rader fra platene
+    raderOvPlater = Math.floor(ruterOvPlater / ruterPrRad);
+    // Overskytende ruter fra overskytende rader fra platene
+    ruterOvRaderOvPlater = ruterOvPlater - raderOvPlater * ruterPrRad;
+
+    allValues =
+      gram &&
+      gram !== "0" &&
+      (platevekt && platevekt !== "0") &&
+      (ruterPrRad && ruterPrRad !== "0") &&
+      (raderPrPlate && raderPrPlate !== "0");
+
+    // like mye som i en plate eller like mange ruter totalt som i en plate
+    wholeBar = gram === platevekt || ruterTot === raderPrPlate * ruterPrRad;
+  };
 </script>
 
 <style>
@@ -228,6 +272,8 @@
     <p class="gram">
       <label for="gram">Hvor mange gram skal du ha?</label>
       <input
+        on:change={compute}
+        bind:value={gram}
         name="gram"
         type="number"
         pattern="”[0-9]*”"
@@ -240,6 +286,8 @@
     <p class="platevekt">
       <label for="gram">Hvor mange gram veier en plate?</label>
       <input
+        on:change={compute}
+        bind:value={platevekt}
         name="platevekt"
         type="number"
         pattern="”[0-9]*”"
@@ -252,6 +300,8 @@
     <p class="ruterirad">
       <label for="gram">Antall ruter per rad</label>
       <input
+        on:change={compute}
+        bind:value={ruterPrRad}
         name="ruterirad"
         type="number"
         min="1"
@@ -263,6 +313,8 @@
     <p class="rader">
       <label for="gram">Antall rader per plate</label>
       <input
+        on:change={compute}
+        bind:value={raderPrPlate}
         name="rader"
         type="number"
         pattern="”[0-9]*”"
@@ -273,8 +325,31 @@
     </p>
   </form>
 </div>
+
 <div class="ut lo--center">
-  <p id="betar" class="betar" />
+  <p id="betar" class="betar">
+    {#if !allValues}
+      Resultatet kommer når alle feltene er utfylt.
+    {:else if wholeBar}
+      Her må du bruke hele platen.
+    {:else if ruterTot > ruterPrPlate}
+      Du trenger {platerTot} plate{platerTot === 1 ? '' : 'r'}, {raderOvPlater}
+      rad{raderOvPlater === 1 ? '' : 'er'} og {ruterOvRaderOvPlater} rute{ruterOvRaderOvPlater === 1 ? '' : 'r'}.
+      <br />
+      Totalt {ruterTot} rute{ruterTot === 1 ? '' : 'r'}.
+    {:else if ruterTot < 1}
+      Nå blir resultatet mindre enn en hel rute. Ser ut som du har en sjokolade
+      med kjempestore ruter eller en dårlig oppskrift. Er en oppskrift som
+      krever mindre enn en hel sjokoladebit noe å bry med?
+    {:else if ruterTot < ruterPrRad}
+      Du trenger bare {ruterTot} rute{ruterTot === 1 ? '' : 'r'}.
+    {:else}
+      Du trenger {raderTot} rad{raderTot === 1 ? '' : 'er'} og {ruterOvRader}
+      rute{ruterOvRader === 1 ? '' : 'r'}.
+      <br />
+      Totalt {ruterTot} rute{ruterTot === 1 ? '' : 'r'}.
+    {/if}
+  </p>
   <div id="resfigur" class="resfigur">
     <div id="resplate" class="reschild resplate" />
     <div id="resrad" class="reschild resrad" />
