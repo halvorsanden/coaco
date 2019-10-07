@@ -38,3 +38,51 @@ p {
   padding-left: 5vw;
   padding-right: 5vw;
 }
+
+
+.sjokoplate {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-content: stretch;
+  align-items: center;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  margin: 4px;
+  background-color: hsl(10, 47%, 33%);
+  padding: 2px;
+  border-radius: 3px;
+}
+
+.sjokorad {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-content: stretch;
+  align-items: center;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+}
+
+.resrad > .sjokorad {
+  margin: 3px;
+}
+
+.sjokorute {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  width: 24px;
+  height: 34px;
+  background: hsl(20, 79%, 16%)
+    url("//8yd.no/assets/yard/labs/sjokolator/chock.png") no-repeat 0 0;
+  background-size: cover;
+  margin: 1px 0;
+  box-sizing: content-box;
+}
+
+.resrute > .sjokorute {
+  margin: 3px;
+}

@@ -6,16 +6,35 @@
   let platevekt = null;
   let ruterPrRad = null;
   let raderPrPlate = null;
-  let ruterTot;
-  let raderTot;
-  let ruterPrPlate;
-  let ruterOvRader;
-  let platerTot;
-  let ruterOvPlater;
-  let raderOvPlater;
-  let ruterOvRaderOvPlater;
-  let allValues;
-  let wholeBar;
+  let ruterTot = null;
+  let raderTot = null;
+  let ruterPrPlate = null;
+  let ruterOvRader = null;
+  let platerTot = null;
+  let ruterOvPlater = null;
+  let raderOvPlater = null;
+  let ruterOvRaderOvPlater = null;
+  let allValues = null;
+  let wholeBar = null;
+
+  let ruteDivInd = null;
+  let ruteFig = `<div class="sjokorute"></div>`;
+  let ruteFigs = null;
+
+  let frRuteFig = null;
+  let frRuteDivInd = null;
+  let radDivInd = null;
+  let radFig = null;
+  let radFigs = null;
+
+  let fpRadFigs;
+  let fpRadDivInd;
+  let fpRuteFig;
+  let fpRuteDivInd;
+  let fpRadFig;
+  let plateDivInd;
+  let plateFig;
+  let plateFigs;
 
   const compute = function() {
     // Ruter totalt
@@ -42,8 +61,50 @@
       (ruterPrRad && ruterPrRad !== "0") &&
       (raderPrPlate && raderPrPlate !== "0");
 
-    // like mye som i en plate eller like mange ruter totalt som i en plate
     wholeBar = gram === platevekt || ruterTot === raderPrPlate * ruterPrRad;
+
+    // figures
+    plateFigs = "";
+    plateDivInd = 0;
+    while (plateDivInd < platerTot) {
+      fpRadFigs = "";
+      fpRadDivInd = 0;
+      while (fpRadDivInd < raderPrPlate) {
+        fpRuteFig = "";
+        fpRuteDivInd = 0;
+        while (fpRuteDivInd < ruterPrRad) {
+          fpRuteDivInd++;
+          fpRuteFig += ruteFig;
+        }
+        fpRadFig = `<div class="sjokorad">${fpRuteFig}</div>`;
+        fpRadDivInd++;
+        fpRadFigs += fpRadFig;
+      }
+      plateFig = `<div class="sjokoplate">${fpRadFigs}</div>`;
+      plateDivInd++;
+      plateFigs += plateFig;
+    }
+
+    radFigs = "";
+    radDivInd = 0;
+    while (radDivInd < raderOvPlater) {
+      frRuteFig = "";
+      frRuteDivInd = 0;
+      while (frRuteDivInd < ruterPrRad) {
+        frRuteDivInd++;
+        frRuteFig += ruteFig;
+      }
+      radFig = `<div class="sjokorad">${frRuteFig}</div>`;
+      radDivInd++;
+      radFigs += radFig;
+    }
+
+    ruteFigs = "";
+    ruteDivInd = 0;
+    while (ruteDivInd < ruterOvRaderOvPlater) {
+      ruteDivInd++;
+      ruteFigs += ruteFig;
+    }
   };
 </script>
 
@@ -157,53 +218,6 @@
 
   .resrute {
     flex-flow: row wrap;
-  }
-
-  .sjokoplate {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-content: stretch;
-    align-items: center;
-    flex-grow: 0;
-    flex-shrink: 1;
-    flex-basis: auto;
-    margin: 4px;
-    background-color: hsl(10, 47%, 33%);
-    padding: 2px;
-    border-radius: 3px;
-  }
-
-  .sjokorad {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-content: stretch;
-    align-items: center;
-    flex-grow: 0;
-    flex-shrink: 1;
-    flex-basis: auto;
-  }
-
-  .resrad > .sjokorad {
-    margin: 3px;
-  }
-
-  .sjokorute {
-    flex-grow: 0;
-    flex-shrink: 1;
-    flex-basis: auto;
-    width: 24px;
-    height: 34px;
-    background: hsl(20, 79%, 16%)
-      url("//8yd.no/assets/yard/labs/sjokolator/chock.png") no-repeat 0 0;
-    background-size: cover;
-    margin: 1px 0;
-    box-sizing: content-box;
-  }
-
-  .resrute > .sjokorute {
-    margin: 3px;
   }
 
   @media only screen and (max-width: 1024px) {
@@ -351,9 +365,17 @@
     {/if}
   </p>
   <div id="resfigur" class="resfigur">
-    <div id="resplate" class="reschild resplate" />
-    <div id="resrad" class="reschild resrad" />
-    <div id="resrute" class="reschild resrute" />
+    {#if allValues}
+      <div id="resplate" class="reschild resplate">
+        {@html plateFigs}
+      </div>
+      <div id="resrad" class="reschild resrad">
+        {@html radFigs}
+      </div>
+      <div id="resrute" class="reschild resrute">
+        {@html ruteFigs}
+      </div>
+    {/if}
   </div>
 </div>
 
