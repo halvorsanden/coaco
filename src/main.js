@@ -7,6 +7,3 @@ const app = new Sjokolator({
 });
 
 export default app;
-
-// import "./js/sjokolator";
-// import "./js/sjokolator-en";
