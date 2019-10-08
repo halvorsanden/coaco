@@ -121,17 +121,10 @@
     padding-bottom: 1em;
   }
   .sjokoinfo {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-content: center;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+    grid-gap: 2rem;
     align-items: flex-end;
-  }
-
-  .sjokoinfo p {
-    flex: 0 1 24%;
-    width: 24%;
   }
 
   input,
@@ -149,7 +142,6 @@
     outline: none;
     height: 2em;
     font-size: 1rem;
-    margin-bottom: 20px;
     box-shadow: none;
     box-sizing: content-box;
   }
@@ -233,11 +225,6 @@
   }
 
   @media only screen and (max-width: 768px) {
-    .sjokoinfo p {
-      flex-basis: 48%;
-      width: 48%;
-    }
-
     .betar {
       font-size: 1.4rem;
     }
@@ -267,24 +254,13 @@
       flex-flow: row wrap;
     }
   }
-
-  @media only screen and (max-width: 500px) {
-    .sjokoinfo {
-      flex-flow: column nowrap;
-    }
-
-    .sjokoinfo p {
-      flex-basis: 100%;
-      width: 100%;
-    }
-  }
 </style>
 
 <Header />
 
 <div class="inn lo--center">
   <form class="sjokoinfo">
-    <p class="gram">
+    <div class="gram">
       <label for="gram">{$_('form.weight')}</label>
       <input
         on:change={compute}
@@ -296,9 +272,9 @@
         max="1000"
         id="gram"
         data-lang="nb" />
-    </p>
+    </div>
 
-    <p class="platevekt">
+    <div class="platevekt">
       <label for="gram">{$_('form.barweight')}</label>
       <input
         on:change={compute}
@@ -310,9 +286,9 @@
         max="1000"
         id="platevekt"
         data-lang="nb" />
-    </p>
+    </div>
 
-    <p class="ruterirad">
+    <div class="ruterirad">
       <label for="gram">{$_('form.pcsrow')}</label>
       <input
         on:change={compute}
@@ -323,9 +299,9 @@
         max="10"
         id="ruterirad"
         data-lang="nb" />
-    </p>
+    </div>
 
-    <p class="rader">
+    <div class="rader">
       <label for="gram">{$_('form.rows')}</label>
       <input
         on:change={compute}
@@ -337,7 +313,7 @@
         max="20"
         id="rader"
         data-lang="nb" />
-    </p>
+    </div>
   </form>
 </div>
 

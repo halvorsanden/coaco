@@ -9,7 +9,7 @@
     flex-flow: row wrap;
     justify-content: space-between;
     margin-top: 1em;
-    margin-bottom: 4em;
+    margin-bottom: 2vh;
   }
 
   .sprog {
@@ -29,15 +29,12 @@
   }
 
   .introtext {
-    max-width: 900px;
+    max-width: 60rem;
     font-size: 1.5rem;
     line-height: 1.35em;
   }
 
   @media only screen and (max-width: 768px) {
-    .hode {
-      margin-bottom: 2em;
-    }
 
     .introtext {
       font-size: 1.1rem;

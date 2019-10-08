@@ -12,34 +12,11 @@
     padding-top: 1em;
     padding-bottom: 1em;
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-column-gap: 2%;
-    grid-template-rows: auto auto auto;
-    grid-row-gap: 1em;
+    grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+    grid-gap: 2vw;
     font-size: 0.85rem;
     line-height: 1.35em;
     border-top: 1px solid var(--colr-primary);
-  }
-
-  .footer__disclaimer {
-    grid-row: 1;
-    grid-column: 1 / 7;
-  }
-
-  .footer__about {
-    grid-row: 2;
-    grid-column: 1 / 7;
-  }
-
-  .footer__version {
-    grid-row: 3;
-    grid-column: 1 / 4;
-  }
-
-  .footer__logo {
-    grid-row: 3;
-    grid-column: 4 / 7;
-    text-align: right;
   }
 
   .devlogo,
@@ -53,47 +30,21 @@
   .devlogo:focus {
     color: hsl(0, 0%, 25%);
   }
-
-  @media only screen and (min-width: 800px) {
-    footer {
-      grid-row-gap: 0;
-    }
-
-    .footer__disclaimer {
-      grid-row: 1 / 4;
-      grid-column: 1 / 3;
-    }
-
-    .footer__about {
-      grid-row: 1 / 4;
-      grid-column: 4 / 6;
-    }
-
-    .footer__version {
-      grid-row: 1 / 4;
-      grid-column: 6;
-    }
-
-    .footer__logo {
-      grid-row: 1 / 4;
-      grid-column: 7;
-    }
-  }
 </style>
 
 <footer class="lo--center">
-  <div class="footer__disclaimer">{$_('footer.disclaimer')}</div>
-  <div class="footer__about">
+  <div>{$_('footer.disclaimer')}</div>
+  <div>
     {$_('footer.experiment')}
     <a href="https://svelte.dev/">Svelte</a>
     .
   </div>
-  <div class="footer__version">
+  <div>
     <a href="https://github.com/halvorsanden/coaco">GitHub-repo</a>
     <br />
     {$_('footer.version')} 20191008
   </div>
-  <div class="footer__logo">
+  <div>
     <a class="devlogo noline" href="http://8yd.no">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 601 282" width="74">
         <path
