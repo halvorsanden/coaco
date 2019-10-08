@@ -1,3 +1,7 @@
+<script>
+  import { _ } from "svelte-i18n";
+</script>
+
 <style>
   :root {
     --colr-primary: hsl(207, 100%, 34%);
@@ -78,15 +82,13 @@
 </style>
 
 <footer class="lo--center">
-  <div class="footer__disclaimer">
-    Sjokolator tar ikke ansvar for eventuell mislykket kokkelering.
-  </div>
+  <div class="footer__disclaimer">{$_('footer.disclaimer')}</div>
   <div class="footer__about">
-    Sjokolator er et JavaScript-eksperiment.
+    {$_('footer.experiment')}
     <br />
     <a href="https://github.com/halvorsanden/coaco">GitHub-repo</a>
   </div>
-  <div class="footer__version">Versjon 20190519</div>
+  <div class="footer__version">{$_('footer.version')} 20190519</div>
   <div class="footer__logo">
     <a class="devlogo noline" href="http://8yd.no">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 601 282" width="74">

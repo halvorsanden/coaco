@@ -1,4 +1,5 @@
 import "./css/style.css";
+import './i18n.js';
 import Sjokolator from "./components/Sjokolator.svelte";
 
 const app = new Sjokolator({

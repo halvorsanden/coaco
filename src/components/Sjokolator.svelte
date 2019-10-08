@@ -1,6 +1,7 @@
 <script>
   import Header from "./Header.svelte";
   import Footer from "./Footer.svelte";
+  import { _ } from "svelte-i18n";
 
   let gram = null;
   let platevekt = null;
@@ -17,15 +18,15 @@
   let allValues = null;
   let wholeBar = null;
 
-  let ruteDivInd = null;
+  let ruteDivInd;
   let ruteFig = `<div class="sjokorute"></div>`;
-  let ruteFigs = null;
+  let ruteFigs;
 
-  let frRuteFig = null;
-  let frRuteDivInd = null;
-  let radDivInd = null;
-  let radFig = null;
-  let radFigs = null;
+  let frRuteFig;
+  let frRuteDivInd;
+  let radDivInd;
+  let radFig;
+  let radFigs;
 
   let fpRadFigs;
   let fpRadDivInd;
@@ -284,7 +285,7 @@
 <div class="inn lo--center">
   <form class="sjokoinfo">
     <p class="gram">
-      <label for="gram">Hvor mange gram skal du ha?</label>
+      <label for="gram">{$_('form.weight')}</label>
       <input
         on:change={compute}
         bind:value={gram}
@@ -298,7 +299,7 @@
     </p>
 
     <p class="platevekt">
-      <label for="gram">Hvor mange gram veier en plate?</label>
+      <label for="gram">{$_('form.barweight')}</label>
       <input
         on:change={compute}
         bind:value={platevekt}
@@ -312,7 +313,7 @@
     </p>
 
     <p class="ruterirad">
-      <label for="gram">Antall ruter per rad</label>
+      <label for="gram">{$_('form.pcsrow')}</label>
       <input
         on:change={compute}
         bind:value={ruterPrRad}
@@ -325,7 +326,7 @@
     </p>
 
     <p class="rader">
-      <label for="gram">Antall rader per plate</label>
+      <label for="gram">{$_('form.rows')}</label>
       <input
         on:change={compute}
         bind:value={raderPrPlate}
@@ -343,25 +344,26 @@
 <div class="ut lo--center">
   <p id="betar" class="betar">
     {#if !allValues}
-      Resultatet kommer når alle feltene er utfylt.
+      {$_('result.whenall')}
     {:else if wholeBar}
-      Her må du bruke hele platen.
+      {$_('result.wholebar')}
     {:else if ruterTot > ruterPrPlate}
-      Du trenger {platerTot} plate{platerTot === 1 ? '' : 'r'}, {raderOvPlater}
-      rad{raderOvPlater === 1 ? '' : 'er'} og {ruterOvRaderOvPlater} rute{ruterOvRaderOvPlater === 1 ? '' : 'r'}.
+      {$_('result.youneed')} {platerTot} {$_('result.bars', { n: platerTot })}, {raderOvPlater}
+      {$_('result.rows', { n: raderOvPlater })} {$_('result.and')}
+      {ruterOvRaderOvPlater} {$_('result.squares', { n: ruterOvRaderOvPlater })}.
       <br />
-      Totalt {ruterTot} rute{ruterTot === 1 ? '' : 'r'}.
+      {$_('result.total')} {ruterTot} {$_('result.squares', { n: ruterTot })}.
     {:else if ruterTot < 1}
-      Nå blir resultatet mindre enn en hel rute. Ser ut som du har en sjokolade
-      med kjempestore ruter eller en dårlig oppskrift. Er en oppskrift som
-      krever mindre enn en hel sjokoladebit noe å bry med?
+      {$_('result.bad')}
     {:else if ruterTot < ruterPrRad}
-      Du trenger bare {ruterTot} rute{ruterTot === 1 ? '' : 'r'}.
+      {$_('result.youneed')} {$_('result.only')} {ruterTot}
+      {$_('result.squares', { n: ruterTot })}.
     {:else}
-      Du trenger {raderTot} rad{raderTot === 1 ? '' : 'er'} og {ruterOvRader}
-      rute{ruterOvRader === 1 ? '' : 'r'}.
+      {$_('result.youneed')} {raderTot} {$_('result.rows', { n: raderTot })}
+      {$_('result.and')} {ruterOvRader}
+      {$_('result.squares', { n: ruterOvRader })}.
       <br />
-      Totalt {ruterTot} rute{ruterTot === 1 ? '' : 'r'}.
+      {$_('result.total')} {ruterTot} {$_('result.squares', { n: ruterTot })}.
     {/if}
   </p>
   <div id="resfigur" class="resfigur">

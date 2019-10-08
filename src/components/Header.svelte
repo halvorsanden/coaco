@@ -1,3 +1,8 @@
+<script>
+  import { locale, _ } from "svelte-i18n";
+  $: oppositeLocale = $locale === 'nb' ? 'en' : 'nb'
+</script>
+
 <style>
   .hode {
     display: flex;
@@ -38,33 +43,21 @@
       font-size: 1.1rem;
     }
   }
-
-  @media only screen and (max-width: 500px) {
-    .sprog {
-      order: 1;
-      flex: 1 0 100%;
-    }
-
-    .logo {
-      order: 2;
-    }
-  }
 </style>
 
 <div class="hode lo--center">
   <div class="logo">
     <img
-      src="http://8yd.no/assets/yard/labs/sjokolator/sjokologo.svg?v=201905191900"
-      alt="Sjokolator" />
+      src="http://8yd.no/assets/yard/labs/sjokolator/{$_('intro.logo')}.svg?v=201905191900"
+      alt="{$_('intro.title')}" />
   </div>
   <div class="sprog">
-    Norsk |
-    <a href="chocolator">English</a>
+  <button on:click={() => locale.set(oppositeLocale)}>
+  {$_('switch.lang', null, oppositeLocale)}</button>
   </div>
   <div class="intro">
     <p class="introtext">
-      Regn om sjokolade fra vekt til biter. Fyll ut alle feltene, resten gjør
-      sjokolatoren for deg.
+      {$_('intro.message')}
     </p>
   </div>
 </div>
