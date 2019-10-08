@@ -10,7 +10,7 @@ dictionary.set({
     },
     footer: {
       disclaimer: 'Sjokolator tar ikke ansvar for eventuell mislykket kokkelering.',
-      experiment: 'Sjokolator er et JavaScript-eksperiment.',
+      experiment: 'Sjokolator er et JavaScript-eksperiment bygget med',
       version: 'Versjon'
     },
     form: {
@@ -41,7 +41,7 @@ dictionary.set({
     },
     footer: {
       disclaimer: 'Chocolator is not responsible for any kitchen failures.',
-      experiment: 'Chocolator is a JavaScript experiment',
+      experiment: 'Chocolator is a JavaScript experiment built with',
       version: 'Version'
     },
     form: {

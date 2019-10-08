@@ -85,10 +85,14 @@
   <div class="footer__disclaimer">{$_('footer.disclaimer')}</div>
   <div class="footer__about">
     {$_('footer.experiment')}
-    <br />
-    <a href="https://github.com/halvorsanden/coaco">GitHub-repo</a>
+    <a href="https://svelte.dev/">Svelte</a>
+    .
   </div>
-  <div class="footer__version">{$_('footer.version')} 20190519</div>
+  <div class="footer__version">
+    <a href="https://github.com/halvorsanden/coaco">GitHub-repo</a>
+    <br />
+    {$_('footer.version')} 20191008
+  </div>
   <div class="footer__logo">
     <a class="devlogo noline" href="http://8yd.no">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 601 282" width="74">
