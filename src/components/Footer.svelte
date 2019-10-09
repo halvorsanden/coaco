@@ -9,13 +9,14 @@
     --colr-link: hsl(207, 100%, 34%);
   }
   footer {
-    padding-top: 1em;
-    padding-bottom: 1em;
+    margin-bottom: 1rem;
+    padding-top: 1rem;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+    align-items: center;
     grid-gap: 2vw;
     font-size: 0.85rem;
-    line-height: 1.35em;
+    line-height: 1.35;
     border-top: 1px solid var(--colr-primary);
   }
 
@@ -36,17 +37,20 @@
   <div>{$_('footer.disclaimer')}</div>
   <div>
     {$_('footer.experiment')}
-    <a href="https://svelte.dev/">Svelte</a>
-    .
+    <a href="https://svelte.dev/">Svelte</a>.
   </div>
   <div>
     <a href="https://github.com/halvorsanden/coaco">GitHub-repo</a>
     <br />
-    {$_('footer.version')} 20191008
+    {$_('footer.version')} 20191009
   </div>
   <div>
-    <a class="devlogo noline" href="http://8yd.no">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 601 282" width="74">
+    <a class="devlogo noline" aria-label="D+D: 8 Yard" href="http://8yd.no">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 601 282"
+        width="60"
+        height="28">
         <path
           d="M58 261c4 15 19 24 33 20l27-8-25-92-53 14 18
           66zm78-77l53-15-28-105-53 14 28 106zM19 116l53-14L47 9l-27 7C6 20-3 35

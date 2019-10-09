@@ -116,15 +116,12 @@
     --colr-link: hsl(207, 100%, 34%);
   }
 
-  .inn {
-    padding-top: 1em;
-    padding-bottom: 1em;
-  }
-  .sjokoinfo {
+  .inputs {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
-    grid-gap: 2rem;
+    grid-gap: 1rem;
     align-items: flex-end;
+    margin-bottom: 2rem;
   }
 
   input,
@@ -132,7 +129,7 @@
     display: block;
   }
 
-  .sjokoinfo input {
+  .inputs input {
     background-color: hsl(0, 0%, 100%);
     width: 92%;
     padding: 3px 6px 4px;
@@ -146,7 +143,7 @@
     box-sizing: content-box;
   }
 
-  .sjokoinfo input:focus {
+  .inputs input:focus {
     padding: 3px 6px 2px;
     border-bottom: 3px solid var(--colr-primary);
     transition: all 0.15s;
@@ -154,171 +151,114 @@
 
   label {
     font-size: 0.9rem;
-    font-weight: 500;
+    font-weight: 550;
     margin-bottom: 0.3em;
   }
 
-  /* RESULT */
-  .ut {
+  .output {
     width: 100%;
-    min-height: 100px;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
     align-content: center;
     align-items: center;
-    padding-top: 1em;
-    padding-bottom: 1em;
-    margin-bottom: 4em;
+    margin-bottom: 4rem;
   }
 
-  .betar {
-    font-size: 1.8rem;
-    font-weight: 400;
-    margin-bottom: 1em;
+  .result--text {
+    font-size: calc(0.83rem + 1vmin);
+    margin-bottom: 2rem;
     width: 100%;
   }
 
-  .resfigur {
+  .result--fig {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     align-content: stretch;
     align-items: stretch;
     width: 100%;
-    padding: 1em 0;
   }
 
-  .reschild {
-    flex-grow: 1;
-    flex-shrink: 1;
-    flex-basis: 33%;
-    width: 33%;
+  .result--figwrapper {
+    flex: 1 1 14rem;
     display: flex;
-    justify-content: center;
+    padding: 0.8rem;
+  }
+
+  .fig--bar {
+    flex-flow: row wrap;
     align-content: center;
-    align-items: center;
-    padding: 12px;
+    align-items: flex-start;
   }
 
-  .resplate {
-    flex-flow: row wrap;
-  }
-
-  .resrad {
+  .fig--row {
     flex-flow: column nowrap;
+    justify-content: center;
+    align-items: flex-start;
   }
 
-  .resrute {
+  .fig--pcs {
     flex-flow: row wrap;
-  }
-
-  @media only screen and (max-width: 1024px) {
-    .ut {
-      box-sizing: border-box;
-      display: flex;
-      flex-flow: column nowrap;
-      justify-content: center;
-      align-content: center;
-      align-items: center;
-    }
-  }
-
-  @media only screen and (max-width: 768px) {
-    .betar {
-      font-size: 1.4rem;
-    }
-
-    .resfigur {
-      flex-flow: column nowrap;
-    }
-
-    .reschild {
-      justify-content: flex-start;
-      align-content: flex-start;
-      align-items: flex-start;
-      flex-basis: 100%;
-      width: 100%;
-      padding: 12px;
-    }
-
-    .resplate {
-      flex-flow: row wrap;
-    }
-
-    .resrad {
-      flex-flow: column nowrap;
-    }
-
-    .resrute {
-      flex-flow: row wrap;
-    }
+    align-content: center;
+    align-items: flex-start;
   }
 </style>
 
 <Header />
 
-<div class="inn lo--center">
-  <form class="sjokoinfo">
-    <div class="gram">
-      <label for="gram">{$_('form.weight')}</label>
-      <input
-        on:change={compute}
-        bind:value={gram}
-        name="gram"
-        type="number"
-        pattern="”[0-9]*”"
-        min="1"
-        max="1000"
-        id="gram"
-        data-lang="nb" />
-    </div>
+<form class="inputs lo--center">
+  <div class="gram">
+    <label for="gram">{$_('form.weight')}</label>
+    <input
+      on:change={compute}
+      bind:value={gram}
+      name="gram"
+      type="number"
+      pattern="”[0-9]*”"
+      min="1"
+      max="1000"
+      data-lang="nb" />
+  </div>
+  <div class="platevekt">
+    <label for="gram">{$_('form.barweight')}</label>
+    <input
+      on:change={compute}
+      bind:value={platevekt}
+      name="platevekt"
+      type="number"
+      pattern="”[0-9]*”"
+      min="1"
+      max="1000"
+      data-lang="nb" />
+  </div>
+  <div class="ruterirad">
+    <label for="gram">{$_('form.pcsrow')}</label>
+    <input
+      on:change={compute}
+      bind:value={ruterPrRad}
+      name="ruterirad"
+      type="number"
+      min="1"
+      max="10"
+      data-lang="nb" />
+  </div>
+  <div class="rader">
+    <label for="gram">{$_('form.rows')}</label>
+    <input
+      on:change={compute}
+      bind:value={raderPrPlate}
+      name="rader"
+      type="number"
+      pattern="”[0-9]*”"
+      min="1"
+      max="20"
+      data-lang="nb" />
+  </div>
+</form>
 
-    <div class="platevekt">
-      <label for="gram">{$_('form.barweight')}</label>
-      <input
-        on:change={compute}
-        bind:value={platevekt}
-        name="platevekt"
-        type="number"
-        pattern="”[0-9]*”"
-        min="1"
-        max="1000"
-        id="platevekt"
-        data-lang="nb" />
-    </div>
-
-    <div class="ruterirad">
-      <label for="gram">{$_('form.pcsrow')}</label>
-      <input
-        on:change={compute}
-        bind:value={ruterPrRad}
-        name="ruterirad"
-        type="number"
-        min="1"
-        max="10"
-        id="ruterirad"
-        data-lang="nb" />
-    </div>
-
-    <div class="rader">
-      <label for="gram">{$_('form.rows')}</label>
-      <input
-        on:change={compute}
-        bind:value={raderPrPlate}
-        name="rader"
-        type="number"
-        pattern="”[0-9]*”"
-        min="1"
-        max="20"
-        id="rader"
-        data-lang="nb" />
-    </div>
-  </form>
-</div>
-
-<div class="ut lo--center">
-  <p id="betar" class="betar">
+<div class="output lo--center">
+  <p class="result--text">
     {#if !allValues}
       {$_('result.whenall')}
     {:else if wholeBar}
@@ -342,19 +282,25 @@
       {$_('result.total')} {ruterTot} {$_('result.squares', { n: ruterTot })}.
     {/if}
   </p>
-  <div id="resfigur" class="resfigur">
-    {#if allValues}
-      <div id="resplate" class="reschild resplate">
-        {@html plateFigs}
-      </div>
-      <div id="resrad" class="reschild resrad">
-        {@html radFigs}
-      </div>
-      <div id="resrute" class="reschild resrute">
-        {@html ruteFigs}
-      </div>
-    {/if}
-  </div>
+  {#if allValues}
+    <div class="result--fig">
+      {#if plateFigs}
+        <div class="result--figwrapper fig--bar">
+          {@html plateFigs}
+        </div>
+      {/if}
+      {#if radFigs}
+        <div class="result--figwrapper fig--row">
+          {@html radFigs}
+        </div>
+      {/if}
+      {#if ruteFigs}
+        <div class="result--figwrapper fig--pcs">
+          {@html ruteFigs}
+        </div>
+      {/if}
+    </div>
+  {/if}
 </div>
 
 <Footer />
