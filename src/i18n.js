@@ -69,7 +69,7 @@ locale.set(
   getClientLocale({
     navigator: true,
     hash: 'lang',
-    fallback: 'nb',
+    fallback: 'en',
   }),
 )
 

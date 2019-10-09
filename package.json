@@ -28,7 +28,7 @@
     "release": "webpack --mode production && python afts.py && npm --no-git-tag-version version patch",
     "css-analysis": "stylestats www/style.css",
     "build": "cross-env NODE_ENV=production webpack",
-    "dev": "webpack-dev-server --content-base public"
+    "dev": "webpack-dev-server --content-base www"
   },
   "browserslist": [
     "cover 93%"
