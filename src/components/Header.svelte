@@ -29,7 +29,7 @@
   }
 
   .logo {
-    flex: 0 1 10rem;
+    max-width: 10rem;
     margin-bottom: 2vw;
   }
 
