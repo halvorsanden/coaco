@@ -132,21 +132,19 @@
   .inputs input {
     background-color: hsl(0, 0%, 100%);
     width: 92%;
-    padding: 3px 6px 4px;
+    padding: 0.35rem;
     border: 0;
     border-bottom: 1px solid var(--colr-primary);
-    border-radius: 3px 3px 0 0;
+    border-radius: 0.2rem 0.2rem 0 0;
     outline: none;
-    height: 2em;
     font-size: 1rem;
     box-shadow: none;
     box-sizing: content-box;
   }
 
   .inputs input:focus {
-    padding: 3px 6px 2px;
+    padding-bottom: calc(0.35rem - 2px);
     border-bottom: 3px solid var(--colr-primary);
-    transition: all 0.15s;
   }
 
   label {
