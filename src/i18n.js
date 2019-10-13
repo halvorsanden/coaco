@@ -6,7 +6,7 @@ dictionary.set({
     intro: {
       logo: 'sjokologo',
       title: 'Sjokolator',
-      message: 'Regn om sjokolade fra vekt til biter. Fyll ut alle feltene, resten gjør sjokolatoren for deg.',
+      message: 'Regn om sjokolade fra vekt til biter. Fyll ut alle feltene og trykk enter, resten gjør sjokolatoren for deg.',
     },
     footer: {
       disclaimer: 'Sjokolator tar ikke ansvar for eventuell mislykket kokkelering.',
@@ -37,7 +37,7 @@ dictionary.set({
     intro: {
       logo: 'sjokologo-en',
       title: 'Chocolator',
-      message: 'Converts weight to number of pieces of chocolate. Complete the form, use the same weight unit in both fields, and the Chocolator does the rest.',
+      message: 'Convert weight to number of pieces of chocolate. Complete the form, hit enter and the Chocolator does the rest.',
     },
     footer: {
       disclaimer: 'Chocolator is not responsible for any kitchen failures.',

@@ -3,108 +3,106 @@
   import Footer from "./Footer.svelte";
   import { _ } from "svelte-i18n";
 
-  let gram = null;
-  let platevekt = null;
-  let ruterPrRad = null;
-  let raderPrPlate = null;
-  let ruterTot = null;
-  let raderTot = null;
-  let ruterPrPlate = null;
-  let ruterOvRader = null;
-  let platerTot = null;
-  let ruterOvPlater = null;
-  let raderOvPlater = null;
-  let ruterOvRaderOvPlater = null;
+  let recipeWeight = null;
+  let barWeight = null;
+  let pcsPerRow = null;
+  let rowsPerBar = null;
+
   let allValues = null;
   let wholeBar = null;
 
-  let ruteDivInd;
-  let ruteFig = `<div class="sjokorute"></div>`;
-  let ruteFigs;
+  let pcsPerBar = null;
+  let pcsExcRows = null;
+  let pcsExcBars = null;
+  let pcsExcRowsExcBars = null;
+  let pcsTotal = null;
 
-  let frRuteFig;
-  let frRuteDivInd;
-  let radDivInd;
-  let radFig;
-  let radFigs;
+  let rowsExcBars = null;
+  let rowsTotal = null;
 
-  let fpRadFigs;
-  let fpRadDivInd;
-  let fpRuteFig;
-  let fpRuteDivInd;
-  let fpRadFig;
-  let plateDivInd;
-  let plateFig;
-  let plateFigs;
+  let barsTotal = null;
+
+  let pcsIndex;
+  let pcsFig = `<div class="choco-pcs"></div>`;
+  let pcsFigs;
+
+  let rowPcsIndex;
+  let rowPcsFig;
+  let rowIndex;
+  let rowFig;
+  let rowFigs;
+
+  let barPcsIndex;
+  let barPcsFig;
+  let barRowIndex;
+  let barRowFig;
+  let barRowFigs;
+  let barIndex;
+  let barFig;
+  let barFigs;
 
   const compute = function() {
-    // Ruter totalt
-    ruterTot = Math.round(gram / (platevekt / (raderPrPlate * ruterPrRad)));
-    // Rader totalt
-    raderTot = Math.floor(ruterTot / ruterPrRad);
-    // Ruter pr plate
-    ruterPrPlate = ruterPrRad * raderPrPlate;
-    // Overskytende ruter fra radene
-    ruterOvRader = ruterTot - raderTot * ruterPrRad;
-    // Plater totalt
-    platerTot = Math.floor(ruterTot / (raderPrPlate * ruterPrRad));
-    // Overskytende ruter fra platene
-    ruterOvPlater = ruterTot - platerTot * (raderPrPlate * ruterPrRad);
-    // Overskytende rader fra platene
-    raderOvPlater = Math.floor(ruterOvPlater / ruterPrRad);
-    // Overskytende ruter fra overskytende rader fra platene
-    ruterOvRaderOvPlater = ruterOvPlater - raderOvPlater * ruterPrRad;
+    pcsTotal = Math.round(
+      recipeWeight / (barWeight / (rowsPerBar * pcsPerRow))
+    );
+    rowsTotal = Math.floor(pcsTotal / pcsPerRow);
+    pcsPerBar = pcsPerRow * rowsPerBar;
+    pcsExcRows = pcsTotal - rowsTotal * pcsPerRow;
+    barsTotal = Math.floor(pcsTotal / (rowsPerBar * pcsPerRow));
+    pcsExcBars = pcsTotal - barsTotal * (rowsPerBar * pcsPerRow);
+    rowsExcBars = Math.floor(pcsExcBars / pcsPerRow);
+    pcsExcRowsExcBars = pcsExcBars - rowsExcBars * pcsPerRow;
 
     allValues =
-      gram &&
-      gram !== "0" &&
-      (platevekt && platevekt !== "0") &&
-      (ruterPrRad && ruterPrRad !== "0") &&
-      (raderPrPlate && raderPrPlate !== "0");
+      recipeWeight &&
+      recipeWeight !== "0" &&
+      (barWeight && barWeight !== "0") &&
+      (pcsPerRow && pcsPerRow !== "0") &&
+      (rowsPerBar && rowsPerBar !== "0");
 
-    wholeBar = gram === platevekt || ruterTot === raderPrPlate * ruterPrRad;
+    wholeBar =
+      recipeWeight === barWeight || pcsTotal === rowsPerBar * pcsPerRow;
 
-    // figures
-    plateFigs = "";
-    plateDivInd = 0;
-    while (plateDivInd < platerTot) {
-      fpRadFigs = "";
-      fpRadDivInd = 0;
-      while (fpRadDivInd < raderPrPlate) {
-        fpRuteFig = "";
-        fpRuteDivInd = 0;
-        while (fpRuteDivInd < ruterPrRad) {
-          fpRuteDivInd++;
-          fpRuteFig += ruteFig;
+    barFigs = "";
+    barIndex = 0;
+    while (barIndex < barsTotal) {
+      barRowFigs = "";
+      barRowIndex = 0;
+      while (barRowIndex < rowsPerBar) {
+        barPcsFig = "";
+        barPcsIndex = 0;
+        while (barPcsIndex < pcsPerRow) {
+          barPcsIndex++;
+          barPcsFig += pcsFig;
         }
-        fpRadFig = `<div class="sjokorad">${fpRuteFig}</div>`;
-        fpRadDivInd++;
-        fpRadFigs += fpRadFig;
+        barRowFig = `<div class="choco-row">${barPcsFig}</div>`;
+        barRowIndex++;
+        barRowFigs += barRowFig;
       }
-      plateFig = `<div class="sjokoplate">${fpRadFigs}</div>`;
-      plateDivInd++;
-      plateFigs += plateFig;
+      barFig = `<div class="choco-bar">${barRowFigs}</div>`;
+      barIndex++;
+      barFigs += barFig;
     }
 
-    radFigs = "";
-    radDivInd = 0;
-    while (radDivInd < raderOvPlater) {
-      frRuteFig = "";
-      frRuteDivInd = 0;
-      while (frRuteDivInd < ruterPrRad) {
-        frRuteDivInd++;
-        frRuteFig += ruteFig;
+    rowFigs = "";
+    rowIndex = 0;
+    while (rowIndex < rowsExcBars) {
+      rowPcsFig = "";
+      rowPcsIndex = 0;
+      while (rowPcsIndex < pcsPerRow) {
+        rowPcsIndex++;
+        rowPcsFig += pcsFig;
       }
-      radFig = `<div class="sjokorad">${frRuteFig}</div>`;
-      radDivInd++;
-      radFigs += radFig;
+      rowFig = `<div class="choco-row">${rowPcsFig}</div>`;
+      rowIndex++;
+      rowFigs += rowFig;
     }
 
-    ruteFigs = "";
-    ruteDivInd = 0;
-    while (ruteDivInd < ruterOvRaderOvPlater) {
-      ruteDivInd++;
-      ruteFigs += ruteFig;
+    pcsFigs = "";
+    pcsIndex = 0;
+    while (pcsIndex < pcsExcRowsExcBars) {
+      pcsIndex++;
+      pcsFigs += pcsFig;
     }
   };
 </script>
@@ -206,52 +204,52 @@
 <Header />
 
 <form class="inputs lo--center">
-  <div class="gram">
-    <label for="gram">{$_('form.weight')}</label>
+  <div>
+    <label for="recipe-weight">{$_('form.weight')}</label>
     <input
       on:change={compute}
-      bind:value={gram}
-      name="gram"
+      bind:value={recipeWeight}
+      id="recipe-weight"
+      name="recipe-weight"
       type="number"
       pattern="”[0-9]*”"
       min="1"
-      max="1000"
-      data-lang="nb" />
+      max="1000" />
   </div>
-  <div class="platevekt">
-    <label for="gram">{$_('form.barweight')}</label>
+  <div>
+    <label for="bar-weight">{$_('form.barweight')}</label>
     <input
       on:change={compute}
-      bind:value={platevekt}
-      name="platevekt"
+      bind:value={barWeight}
+      id="bar-weight"
+      name="bar-weight"
       type="number"
       pattern="”[0-9]*”"
       min="1"
-      max="1000"
-      data-lang="nb" />
+      max="1000" />
   </div>
-  <div class="ruterirad">
-    <label for="gram">{$_('form.pcsrow')}</label>
+  <div>
+    <label for="pcs-row">{$_('form.pcsrow')}</label>
     <input
       on:change={compute}
-      bind:value={ruterPrRad}
-      name="ruterirad"
+      bind:value={pcsPerRow}
+      id="pcs-row"
+      name="pcs-row"
       type="number"
       min="1"
-      max="10"
-      data-lang="nb" />
+      max="10" />
   </div>
-  <div class="rader">
-    <label for="gram">{$_('form.rows')}</label>
+  <div>
+    <label for="rows">{$_('form.rows')}</label>
     <input
       on:change={compute}
-      bind:value={raderPrPlate}
-      name="rader"
+      bind:value={rowsPerBar}
+      id="rows"
+      name="rows"
       type="number"
       pattern="”[0-9]*”"
       min="1"
-      max="20"
-      data-lang="nb" />
+      max="20" />
   </div>
 </form>
 
@@ -261,40 +259,39 @@
       {$_('result.whenall')}
     {:else if wholeBar}
       {$_('result.wholebar')}
-    {:else if ruterTot > ruterPrPlate}
-      {$_('result.youneed')} {platerTot} {$_('result.bars', { n: platerTot })}, {raderOvPlater}
-      {$_('result.rows', { n: raderOvPlater })} {$_('result.and')}
-      {ruterOvRaderOvPlater} {$_('result.squares', { n: ruterOvRaderOvPlater })}.
+    {:else if pcsTotal > pcsPerBar}
+      {$_('result.youneed')} {barsTotal} {$_('result.bars', { n: barsTotal })}, {rowsExcBars}
+      {$_('result.rows', { n: rowsExcBars })} {$_('result.and')}
+      {pcsExcRowsExcBars} {$_('result.squares', { n: pcsExcRowsExcBars })}.
       <br />
-      {$_('result.total')} {ruterTot} {$_('result.squares', { n: ruterTot })}.
-    {:else if ruterTot < 1}
+      {$_('result.total')} {pcsTotal} {$_('result.squares', { n: pcsTotal })}.
+    {:else if pcsTotal < 1}
       {$_('result.bad')}
-    {:else if ruterTot < ruterPrRad}
-      {$_('result.youneed')} {$_('result.only')} {ruterTot}
-      {$_('result.squares', { n: ruterTot })}.
+    {:else if pcsTotal < pcsPerRow}
+      {$_('result.youneed')} {$_('result.only')} {pcsTotal}
+      {$_('result.squares', { n: pcsTotal })}.
     {:else}
-      {$_('result.youneed')} {raderTot} {$_('result.rows', { n: raderTot })}
-      {$_('result.and')} {ruterOvRader}
-      {$_('result.squares', { n: ruterOvRader })}.
+      {$_('result.youneed')} {rowsTotal} {$_('result.rows', { n: rowsTotal })}
+      {$_('result.and')} {pcsExcRows} {$_('result.squares', { n: pcsExcRows })}.
       <br />
-      {$_('result.total')} {ruterTot} {$_('result.squares', { n: ruterTot })}.
+      {$_('result.total')} {pcsTotal} {$_('result.squares', { n: pcsTotal })}.
     {/if}
   </p>
   {#if allValues}
     <div class="result--fig">
-      {#if plateFigs}
+      {#if barFigs}
         <div class="result--figwrapper fig--bar">
-          {@html plateFigs}
+          {@html barFigs}
         </div>
       {/if}
-      {#if radFigs}
+      {#if rowFigs}
         <div class="result--figwrapper fig--row">
-          {@html radFigs}
+          {@html rowFigs}
         </div>
       {/if}
-      {#if ruteFigs}
+      {#if pcsFigs}
         <div class="result--figwrapper fig--pcs">
-          {@html ruteFigs}
+          {@html pcsFigs}
         </div>
       {/if}
     </div>

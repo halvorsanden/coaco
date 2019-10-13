@@ -29,8 +29,13 @@
   }
 
   .logo {
+    flex: 0 1 100%;
     max-width: 10rem;
     margin-bottom: 2vw;
+  }
+
+  .logo span {
+    display: none;
   }
 
   .intro {
@@ -46,10 +51,12 @@
 </style>
 
 <header class="hode lo--center">
-  <img
-    class="logo"
-    src="http://8yd.no/assets/yard/labs/sjokolator/{$_('intro.logo')}.svg?v=201905191900"
-    alt={$_('intro.title')} />
+  <h1 class="logo">
+    <span>{$_('intro.title')}</span>
+    <img
+      src="http://8yd.no/assets/yard/labs/sjokolator/{$_('intro.logo')}.svg?v=201905191900"
+      alt="" />
+  </h1>
   <button class="locale" on:click={() => locale.set(oppositeLocale)}>
     {$_('switch.lang', null, oppositeLocale)}
   </button>
