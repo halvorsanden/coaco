@@ -1,5 +1,5 @@
-@import "reset";
-@import "vars";
+@import 'reset';
+@import 'vars';
 
 html,
 input,
@@ -8,8 +8,8 @@ button {
     /* Windows 6+ */ Segoe UI, /* Android 4+ */ Roboto,
     /* Ubuntu 10.10+ */ Ubuntu, /* Gnome 3+ */ Cantarell,
     /* KDE Plasma 5+ */ Noto Sans, /* fallback */ sans-serif,
-    /* macOS emoji */ "Apple Color Emoji", /* Windows emoji */ "Segoe UI Emoji",
-    /* Windows emoji */ "Segoe UI Symbol", /* Linux emoji */ "Noto Color Emoji";
+    /* macOS emoji */ 'Apple Color Emoji', /* Windows emoji */ 'Segoe UI Emoji',
+    /* Windows emoji */ 'Segoe UI Symbol', /* Linux emoji */ 'Noto Color Emoji';
 }
 
 body {
@@ -71,7 +71,7 @@ p {
   width: 1.5rem;
   height: 2.125rem;
   background: hsl(20, 79%, 16%)
-    url("//8yd.no/assets/yard/labs/sjokolator/chock.png") no-repeat 0 0;
+    url('https://8yd.no/labs/chocolator/assets/chock.png') no-repeat 0 0;
   background-size: cover;
   margin: 1px 0;
   box-sizing: content-box;

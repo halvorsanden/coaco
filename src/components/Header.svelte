@@ -1,6 +1,6 @@
 <script>
-  import { locale, _ } from 'svelte-i18n'
-  $: oppositeLocale = $locale === 'nb' ? 'en' : 'nb'
+  import { locale, _ } from "svelte-i18n"
+  $: oppositeLocale = $locale === "nb" ? "en" : "nb"
 </script>
 
 <style>
@@ -54,8 +54,8 @@
   <h1 class="logo">
     <span>{$_('intro.title')}</span>
     <img
-      src="http://8yd.no/assets/yard/labs/sjokolator/{$_('intro.logo')}.svg?v=201905191900"
-      alt="" />
+      src="https://8yd.no/labs/chocolator/assets/{$_('intro.logo')}.svg?v=201905191900"
+      alt="{$_('intro.title')} logo" />
   </h1>
   <button class="locale" on:click={() => locale.set(oppositeLocale)}>
     {$_('switchlang')}
