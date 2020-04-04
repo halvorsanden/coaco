@@ -1,5 +1,5 @@
 <script>
-  import { _ } from "svelte-i18n";
+  import { _ } from "svelte-i18n"
 </script>
 
 <style>
@@ -37,12 +37,12 @@
   <div>{$_('footer.disclaimer')}</div>
   <div>
     {$_('footer.experiment')}
-    <a href="https://svelte.dev/">Svelte</a>.
+    <a href="https://svelte.dev/">Svelte</a>
   </div>
   <div>
     <a href="https://github.com/halvorsanden/coaco">GitHub-repo</a>
     <br />
-    {$_('footer.version')} 20191009
+    {$_('footer.version')} 20200404
   </div>
   <div>
     <a class="devlogo noline" aria-label="D+D: 8 Yard" href="http://8yd.no">

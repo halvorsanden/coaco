@@ -1,6 +1,6 @@
 <script>
-  import { locale, _ } from "svelte-i18n";
-  $: oppositeLocale = $locale === "nb" ? "en" : "nb";
+  import { locale, _ } from 'svelte-i18n'
+  $: oppositeLocale = $locale === 'nb' ? 'en' : 'nb'
 </script>
 
 <style>
@@ -58,7 +58,7 @@
       alt="" />
   </h1>
   <button class="locale" on:click={() => locale.set(oppositeLocale)}>
-    {$_('switch.lang', null, oppositeLocale)}
+    {$_('switchlang')}
   </button>
   <div class="intro">
     <p class="introtext">{$_('intro.message')}</p>

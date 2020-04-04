@@ -1,110 +1,107 @@
 <script>
-  import Header from "./Header.svelte";
-  import Footer from "./Footer.svelte";
-  import { _ } from "svelte-i18n";
+  import Header from "./Header.svelte"
+  import Footer from "./Footer.svelte"
+  import { _ } from "svelte-i18n"
 
-  let recipeWeight = null;
-  let barWeight = null;
-  let pcsPerRow = null;
-  let rowsPerBar = null;
+  let recipeWeight = null
+  let barWeight = null
+  let pcsPerRow = null
+  let rowsPerBar = null
 
-  let allValues = null;
-  let wholeBar = null;
+  let allValues = null
+  let wholeBar = null
 
-  let pcsPerBar = null;
-  let pcsExcRows = null;
-  let pcsExcBars = null;
-  let pcsExcRowsExcBars = null;
-  let pcsTotal = null;
+  let pcsPerBar = null
+  let pcsExcRows = null
+  let pcsExcBars = null
+  let pcsExcRowsExcBars = null
+  let pcsTotal = null
 
-  let rowsExcBars = null;
-  let rowsTotal = null;
+  let rowsExcBars = null
+  let rowsTotal = null
 
-  let barsTotal = null;
+  let barsTotal = null
 
-  let pcsIndex;
-  let pcsFig = `<div class="choco-pcs"></div>`;
-  let pcsFigs;
+  let pcsIndex
+  let pcsFig = `<div class="choco-pcs"></div>`
+  let pcsFigs
 
-  let rowPcsIndex;
-  let rowPcsFig;
-  let rowIndex;
-  let rowFig;
-  let rowFigs;
+  let rowPcsIndex
+  let rowPcsFig
+  let rowIndex
+  let rowFig
+  let rowFigs
 
-  let barPcsIndex;
-  let barPcsFig;
-  let barRowIndex;
-  let barRowFig;
-  let barRowFigs;
-  let barIndex;
-  let barFig;
-  let barFigs;
+  let barPcsIndex
+  let barPcsFig
+  let barRowIndex
+  let barRowFig
+  let barRowFigs
+  let barIndex
+  let barFig
+  let barFigs
 
   const compute = function() {
-    pcsTotal = Math.round(
-      recipeWeight / (barWeight / (rowsPerBar * pcsPerRow))
-    );
-    rowsTotal = Math.floor(pcsTotal / pcsPerRow);
-    pcsPerBar = pcsPerRow * rowsPerBar;
-    pcsExcRows = pcsTotal - rowsTotal * pcsPerRow;
-    barsTotal = Math.floor(pcsTotal / (rowsPerBar * pcsPerRow));
-    pcsExcBars = pcsTotal - barsTotal * (rowsPerBar * pcsPerRow);
-    rowsExcBars = Math.floor(pcsExcBars / pcsPerRow);
-    pcsExcRowsExcBars = pcsExcBars - rowsExcBars * pcsPerRow;
+    pcsTotal = Math.round(recipeWeight / (barWeight / (rowsPerBar * pcsPerRow)))
+    rowsTotal = Math.floor(pcsTotal / pcsPerRow)
+    pcsPerBar = pcsPerRow * rowsPerBar
+    pcsExcRows = pcsTotal - rowsTotal * pcsPerRow
+    barsTotal = Math.floor(pcsTotal / (rowsPerBar * pcsPerRow))
+    pcsExcBars = pcsTotal - barsTotal * (rowsPerBar * pcsPerRow)
+    rowsExcBars = Math.floor(pcsExcBars / pcsPerRow)
+    pcsExcRowsExcBars = pcsExcBars - rowsExcBars * pcsPerRow
 
     allValues =
       recipeWeight &&
       recipeWeight !== "0" &&
       (barWeight && barWeight !== "0") &&
       (pcsPerRow && pcsPerRow !== "0") &&
-      (rowsPerBar && rowsPerBar !== "0");
+      (rowsPerBar && rowsPerBar !== "0")
 
-    wholeBar =
-      recipeWeight === barWeight || pcsTotal === rowsPerBar * pcsPerRow;
+    wholeBar = recipeWeight === barWeight || pcsTotal === rowsPerBar * pcsPerRow
 
-    barFigs = "";
-    barIndex = 0;
+    barFigs = ""
+    barIndex = 0
     while (barIndex < barsTotal) {
-      barRowFigs = "";
-      barRowIndex = 0;
+      barRowFigs = ""
+      barRowIndex = 0
       while (barRowIndex < rowsPerBar) {
-        barPcsFig = "";
-        barPcsIndex = 0;
+        barPcsFig = ""
+        barPcsIndex = 0
         while (barPcsIndex < pcsPerRow) {
-          barPcsIndex++;
-          barPcsFig += pcsFig;
+          barPcsIndex++
+          barPcsFig += pcsFig
         }
-        barRowFig = `<div class="choco-row">${barPcsFig}</div>`;
-        barRowIndex++;
-        barRowFigs += barRowFig;
+        barRowFig = `<div class="choco-row">${barPcsFig}</div>`
+        barRowIndex++
+        barRowFigs += barRowFig
       }
-      barFig = `<div class="choco-bar">${barRowFigs}</div>`;
-      barIndex++;
-      barFigs += barFig;
+      barFig = `<div class="choco-bar">${barRowFigs}</div>`
+      barIndex++
+      barFigs += barFig
     }
 
-    rowFigs = "";
-    rowIndex = 0;
+    rowFigs = ""
+    rowIndex = 0
     while (rowIndex < rowsExcBars) {
-      rowPcsFig = "";
-      rowPcsIndex = 0;
+      rowPcsFig = ""
+      rowPcsIndex = 0
       while (rowPcsIndex < pcsPerRow) {
-        rowPcsIndex++;
-        rowPcsFig += pcsFig;
+        rowPcsIndex++
+        rowPcsFig += pcsFig
       }
-      rowFig = `<div class="choco-row">${rowPcsFig}</div>`;
-      rowIndex++;
-      rowFigs += rowFig;
+      rowFig = `<div class="choco-row">${rowPcsFig}</div>`
+      rowIndex++
+      rowFigs += rowFig
     }
 
-    pcsFigs = "";
-    pcsIndex = 0;
+    pcsFigs = ""
+    pcsIndex = 0
     while (pcsIndex < pcsExcRowsExcBars) {
-      pcsIndex++;
-      pcsFigs += pcsFig;
+      pcsIndex++
+      pcsFigs += pcsFig
     }
-  };
+  }
 </script>
 
 <style>
@@ -260,21 +257,26 @@
     {:else if wholeBar}
       {$_('result.wholebar')}
     {:else if pcsTotal > pcsPerBar}
-      {$_('result.youneed')} {barsTotal} {$_('result.bars', { n: barsTotal })}, {rowsExcBars}
-      {$_('result.rows', { n: rowsExcBars })} {$_('result.and')}
-      {pcsExcRowsExcBars} {$_('result.squares', { n: pcsExcRowsExcBars })}.
+      {$_('result.youneed')} {barsTotal}
+      {$_('result.bars', { values: { n: barsTotal } })}, {rowsExcBars}
+      {$_('result.rows', { values: { n: rowsExcBars } })} {$_('result.and')}
+      {pcsExcRowsExcBars}
+      {$_('result.squares', { values: { n: pcsExcRowsExcBars } })}.
       <br />
-      {$_('result.total')} {pcsTotal} {$_('result.squares', { n: pcsTotal })}.
+      {$_('result.total')} {pcsTotal}
+      {$_('result.squares', { values: { n: pcsTotal } })}.
     {:else if pcsTotal < 1}
       {$_('result.bad')}
     {:else if pcsTotal < pcsPerRow}
       {$_('result.youneed')} {$_('result.only')} {pcsTotal}
-      {$_('result.squares', { n: pcsTotal })}.
+      {$_('result.squares', { values: { n: pcsTotal } })}.
     {:else}
-      {$_('result.youneed')} {rowsTotal} {$_('result.rows', { n: rowsTotal })}
-      {$_('result.and')} {pcsExcRows} {$_('result.squares', { n: pcsExcRows })}.
+      {$_('result.youneed')} {rowsTotal}
+      {$_('result.rows', { values: { n: rowsTotal } })} {$_('result.and')}
+      {pcsExcRows} {$_('result.squares', { values: { n: pcsExcRows } })}.
       <br />
-      {$_('result.total')} {pcsTotal} {$_('result.squares', { n: pcsTotal })}.
+      {$_('result.total')} {pcsTotal}
+      {$_('result.squares', { values: { n: pcsTotal } })}.
     {/if}
   </p>
   {#if allValues}
