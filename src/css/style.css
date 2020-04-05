@@ -70,8 +70,7 @@ p {
   flex-basis: auto;
   width: 1.5rem;
   height: 2.125rem;
-  background: hsl(20, 79%, 16%)
-    url('https://8yd.no/labs/chocolator/assets/chock.png') no-repeat 0 0;
+  background: hsl(20, 79%, 16%) url('../assets/chock.png') no-repeat 0 0;
   background-size: cover;
   margin: 1px 0;
   box-sizing: content-box;

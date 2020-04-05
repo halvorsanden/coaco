@@ -1,24 +1,17 @@
-const path = require("path");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-
-const mode = process.env.NODE_ENV || "development";
-const prod = mode === "production";
+const path = require('path')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-  entry: {
-    bundle: ["./src/main.js"]
-  },
-  resolve: {
-    alias: {
-      svelte: path.resolve("node_modules", "svelte")
-    },
-    extensions: [".mjs", ".js", ".svelte"],
-    mainFields: ["svelte", "browser", "module", "main"]
-  },
+  entry: './src/main.js',
   output: {
-    path: path.join(__dirname, "./www"),
-    filename: "index.bundle.js",
-    chunkFilename: "index.[id].bundle.js"
+    path: path.join(__dirname, './chocolator'),
+    filename: 'bundle.js',
+    chunkFilename: 'chunk[id].js'
+  },
+  devtool: 'source-map',
+  devServer: {
+    contentBase: './chocolator'
   },
   module: {
     rules: [
@@ -26,7 +19,7 @@ module.exports = {
         test: /\.svelte$/,
         exclude: /node_modules/,
         use: {
-          loader: "svelte-loader",
+          loader: 'svelte-loader',
           options: {
             emitCss: true,
             hotReload: true
@@ -35,20 +28,32 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        resolve: { extensions: [".css"] },
-        use: [
-          prod ? MiniCssExtractPlugin.loader : "style-loader",
-          "css-loader",
-          "postcss-loader"
-        ]
+        exclude: /node_modules/,
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader']
+      },
+      {
+        test: /\.(png|svg)$/,
+        use: ['file-loader']
       }
     ]
   },
-  mode,
   plugins: [
     new MiniCssExtractPlugin({
-      filename: "style.css"
+      filename: 'bundle.css'
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'index.html',
+      template: './src/index.html',
+      title: 'Chocolator',
+      files: {
+        css: 'bundle.css',
+        js: 'bundle.js'
+      },
+      themeColour: '#ecf2f7',
+      lang: 'en',
+      minify: true,
+      hash: true,
+      inject: false
     })
-  ],
-  devtool: prod ? false : "source-map"
-};
+  ]
+}

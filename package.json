@@ -1,20 +1,24 @@
 {
-  "name": "sjokolator",
-  "version": "1.0.5",
-  "description": "",
+  "name": "chocolator",
+  "version": "1.5.1",
+  "description": "Converts weight to number of pieces of chocolate.",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:halvorsanden/coaco.git"
+  },
   "author": "Halvor William Sanden",
   "license": "GPL-3.0",
   "devDependencies": {
     "autoprefixer": "^9.7.5",
     "browserslist": "^4.11.1",
-    "cross-env": "^7.0.2",
     "css-loader": "^3.4.2",
     "cssnano": "^4.1.10",
+    "file-loader": "^6.0.0",
+    "html-webpack-plugin": "^4.0.1",
     "mini-css-extract-plugin": "^0.9.0",
     "postcss-css-variables": "^0.14.0",
     "postcss-import": "^12.0.1",
     "postcss-loader": "^3.0.0",
-    "serve": "^11.3.0",
     "style-loader": "^1.1.3",
     "svelte": "^3.20.1",
     "svelte-i18n": "^3.0.3",
@@ -24,17 +28,16 @@
     "webpack-dev-server": "^3.10.3"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "release": "webpack --mode production && python afts.py && npm --no-git-tag-version version patch",
-    "css-analysis": "stylestats www/style.css",
-    "build": "cross-env NODE_ENV=production webpack",
-    "dev": "webpack-dev-server --content-base www"
+    "start": "webpack-dev-server --mode development",
+    "build": "rm -rf chocolator && webpack --mode production",
+    "release": "rm -rf chocolator && webpack --mode production && npm --no-git-tag-version version patch"
   },
   "browserslist": [
     "cover 93%"
   ],
   "prettier": {
     "semi": false,
-    "singleQuote": true
+    "singleQuote": true,
+    "trailingComma": "none"
   }
 }

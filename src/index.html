@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html
+  lang="<%= htmlWebpackPlugin.options.lang %>"
+  xml:lang="<%= htmlWebpackPlugin.options.lang %>"
+  xmlns="http://www.w3.org/1999/xhtml"
+>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Chocolator</title>
-  <link rel="stylesheet" media="screen" href="./style.css?v=202001041540" />
   <link
     rel="apple-touch-icon"
     sizes="180x180"
@@ -30,8 +32,13 @@
     rel="shortcut icon"
     href="https://8yd.no/yard/ico/favicon.ico?v=20171028"
   />
-  <meta name="theme-color" content="#ecf2f7" />
-  <script async src="./index.bundle.js?v=202001041545"></script>
+  <meta
+    name="theme-color"
+    content="<%= htmlWebpackPlugin.options.themeColour %>"
+  />
+  <link href="./<%= htmlWebpackPlugin.files.css %>" rel="stylesheet" />
+  <script src="./<%= htmlWebpackPlugin.files.js %>" defer></script>
+  <title><%= htmlWebpackPlugin.options.title %></title>
   <script
     async
     src="https://www.googletagmanager.com/gtag/js?id=UA-3973710-1"
