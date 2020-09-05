@@ -42,7 +42,7 @@
   <div>
     <a href="https://github.com/halvorsanden/coaco">GitHub-repo</a>
     <br />
-    {$_('footer.version')} 20200405
+    {$_('footer.version')} 20200905
   </div>
   <div>
     <a class="devlogo noline" aria-label="D+D: 8 Yard" href="https://8yd.no">
