@@ -1,13 +1,31 @@
-import {
-    addMessages,
-    init,
-    getLocaleFromNavigator
-} from 'svelte-i18n';
-import nb from './nb.json';
-import en from './en.json';
-addMessages('nb', nb);
-addMessages('en', en);
-init({
-    fallbackLocale: 'en',
-    initialLocale: getLocaleFromNavigator()
-});
+{
+  "switchlang": "English",
+  "intro": {
+    "logo": "sjokologo",
+    "title": "Sjokolator",
+    "message": "Regn om sjokolade fra vekt til biter. Fyll ut alle feltene og trykk enter, resten gjør sjokolatoren for deg."
+  },
+  "footer": {
+    "disclaimer": "Sjokolator tar ikke ansvar for eventuell mislykket kokkelering.",
+    "experiment": "Sjokolator er et JavaScript-eksperiment bygget med",
+    "version": "Versjon"
+  },
+  "form": {
+    "weight": "Hvor mange gram skal du ha?",
+    "barweight": "Hvor mange gram veier en plate?",
+    "pcsrow": "Antall ruter per rad",
+    "rows": "Antall rader per plate"
+  },
+  "result": {
+    "whenall": "Resultatet kommer når alle feltene er utfylt.",
+    "wholebar": "Her må du bruke hele platen.",
+    "youneed": "Du trenger",
+    "only": "bare",
+    "and": "og",
+    "squares": "{n, plural, one {rute} other {ruter}}",
+    "bars": "{n, plural, one {plate} other {plater}}",
+    "rows": "{n, plural, one {rad} other {rader}}",
+    "total": "Totalt",
+    "bad": "Nå blir resultatet mindre enn en hel rute. Ser ut som du har en sjokolade med kjempestore ruter eller en dårlig oppskrift. Er en oppskrift som krever mindre enn en hel sjokoladebit noe å bry med?"
+  }
+}
