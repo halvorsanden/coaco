@@ -25,7 +25,7 @@
     "squares": "{n, plural, one {square} other {squares}}",
     "bars": "{n, plural, one {bar} other {bars}}",
     "rows": "{n, plural, one {row} other {rows}}",
-    "total": "Total:",
+    "total": "Total",
     "bad": "By my calculations, that's actually less than a whole square. That's either quite a big bar or a lousy recipe."
   }
 }
