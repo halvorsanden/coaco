@@ -1,3 +1,3 @@
 files:
-  - source: /src/
-    translation: /src/i18n/%language%.json
+  - source: /src/i18n/nb.json
+    translation: /src/18n/%two_letters_code%.json
