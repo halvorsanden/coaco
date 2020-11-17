@@ -1,5 +1,5 @@
-import './css/style.css';
-import './i18n/i18n.js';
-import Sjokolator from './components/Sjokolator.svelte';
-const app = new Sjokolator({ target: document.body });
-export default app;
+:root {
+  --colr-primary: hsl(207, 100%, 34%);
+  --colr-text: hsl(0, 0%, 15%);
+  --colr-link: hsl(207, 100%, 34%);
+}
