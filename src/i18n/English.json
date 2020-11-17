@@ -1,31 +1,53 @@
-{
-  "switchlang": "English",
-  "intro": {
-    "logo": "sjokologo",
-    "title": "Sjokolator",
-    "message": "Regn om sjokolade fra vekt til biter. Fyll ut alle feltene og trykk enter, resten gjør sjokolatoren for deg."
-  },
-  "footer": {
-    "disclaimer": "Sjokolator tar ikke ansvar for eventuell mislykket kokkelering.",
-    "experiment": "Sjokolator er et JavaScript-eksperiment bygget med",
-    "version": "Versjon"
-  },
-  "form": {
-    "weight": "Hvor mange gram skal du ha?",
-    "barweight": "Hvor mange gram veier en plate?",
-    "pcsrow": "Antall ruter per rad",
-    "rows": "Antall rader per plate"
-  },
-  "result": {
-    "whenall": "Resultatet kommer når alle feltene er utfylt.",
-    "wholebar": "Her må du bruke hele platen.",
-    "youneed": "Du trenger",
-    "only": "bare",
-    "and": "og",
-    "squares": "{n, plural, one {rute} other {ruter}}",
-    "bars": "{n, plural, one {plate} other {plater}}",
-    "rows": "{n, plural, one {rad} other {rader}}",
-    "total": "Totalt",
-    "bad": "Nå blir resultatet mindre enn en hel rute. Ser ut som du har en sjokolade med kjempestore ruter eller en dårlig oppskrift. Er en oppskrift som krever mindre enn en hel sjokoladebit noe å bry med?"
-  }
-}
+<!DOCTYPE html>
+<html
+  lang="en"
+  xml:lang="en"
+  xmlns="http://www.w3.org/1999/xhtml"
+>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="https://8yd.no/yard/ico/apple-touch-icon.png?v=20171028"
+  />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="32x32"
+    href="https://8yd.no/yard/ico/favicon-32x32.png?v=20171028"
+  />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="16x16"
+    href="https://8yd.no/yard/ico/favicon-16x16.png?v=20171028"
+  />
+  <link
+    rel="mask-icon"
+    href="https://8yd.no/yard/ico/safari-pinned-tab.svg?v=20171028"
+    color="#242f7a"
+  />
+  <link
+    rel="shortcut icon"
+    href="https://8yd.no/yard/ico/favicon.ico?v=20171028"
+  />
+  <meta
+    name="theme-color"
+    content="<%= htmlWebpackPlugin.options.themeColour %>"
+  />
+  <link href="./<%= htmlWebpackPlugin.files.css %>" rel="stylesheet" />
+  <script src="./<%= htmlWebpackPlugin.files.js %>" defer></script>
+  <title><%= htmlWebpackPlugin.options.title %></title>
+  <script
+    async
+    src="></script>
+  <script>
+    window.dataLayer = window.dataLayer || []
+    function gtag() {
+      dataLayer.push(arguments)
+    }
+    gtag('js', new Date())
+    gtag('config', 'UA-3973710-1')
+  </script>
+</html>
