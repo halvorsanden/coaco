@@ -1,13 +1,15 @@
 const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const ASSET_PATH = process.env.ASSET_PATH || '/'
 
 module.exports = {
   entry: './src/main.js',
   output: {
     path: path.join(__dirname, './chocolator'),
     filename: 'bundle.js',
-    chunkFilename: 'chunk[id].js'
+    chunkFilename: 'chunk[id].js',
+    publicPath: ASSET_PATH
   },
   devtool: 'source-map',
   devServer: {
@@ -18,12 +20,10 @@ module.exports = {
       {
         test: /\.svelte$/,
         exclude: /node_modules/,
-        use: {
-          loader: 'svelte-loader',
-          options: {
-            emitCss: true,
-            hotReload: true
-          }
+        loader: 'svelte-loader',
+        options: {
+          emitCss: true,
+          hotReload: true
         }
       },
       {
